@@ -1,45 +1,17 @@
 <!DOCTYPE html>
 <html>
-<script src="https://cdnjs.cloudfare.com/ajax/libs/vega/3.0.0-beta.25/vega.js"></script>
-<script src="https://cdnjs.cloudfare.com/ajax/libs/vega-lite/2.0.0-alpha.7/vega-lite.js"></script>
-<script src="https://vega.github.io/vega-embed/vega-embed.min.js"></script>
-<style> .vega-actions a {margin-left: 5px;} </style>
+  <head>
+    <script src="https://cdnjs.cloudfare.com/ajax/libs/vega/3.0.0-beta.25/vega.js"></script>
+    <script src="https://cdnjs.cloudfare.com/ajax/libs/vega-lite/2.0.0-alpha.7/vega-lite.js"></script>
+    <script src="https://vega.github.io/vega-embed/vega-embed.min.js"></script>
+    <style> .vega-actions a {margin-left: 5px;} </style>
+  </head>
 <body>    
-  <div id="vis"> </div>
-  <script>
-  var spec = {
-   "$schema" : "https://vega.github.io/schema/vega/v3.0.json",
-   "width" : 600, 
-   "height" : 400,
-   "padding" : 5, 
+  <div id="vis"></div>
 
-   "data" : [{"name":"lost", "values":[{"i":1, "d":4}, {"i":2, "d":8}, 
-                                       {"i":3, "d":15}, {"i":4, "d":16}] }],
-   
-   "scales" : [{
-   "name" : "xscale",
-   "type" : "band",
-   "range" : "width",
-   "domain" : {"data" : "lost", "field" : "i"}
-  },
-  {"name" : "yscale",
-   "type" : "linear",
-   "range" : "height",
-   "domain" : {"data" : "lost", "field" : "d"},
-   "zero" : "true",
-   "nice" : "true"}],
-
-   "axes" : [{"orient" : "bottom", "scale" : "xscale"},
-             {"orient" : "left", "scale" : "yscale"}],
-
-   "marks" : [{
-   "type" : "rect",
-   "from" : {"data" : "lost"}]
-   };
-   
-   vega.embed('#vis', spec);
-    
-  </script>
-  
+  <script type="text/javascript">
+    var spec = "https://raw.githubusercontent.com/vega/vega/master/docs/examples/bar-chart.vg.json";
+    vega.embed('#vis', spec);
+  </script>  
 </body>
 </html>
