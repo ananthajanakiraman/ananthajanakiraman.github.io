@@ -5,6 +5,17 @@
 <script src=“https://vega.github.io/vega-embed/vega-embed.min.js”></script>
 <style> .vega-actions a {margin-left: 20px;} </style>
 <body>    
-<h1>Hello World</h1>
+  <div id="vis"> </div>
+  <script>
+   var spec = {
+  "$schema" : "https://vega.github.io/schema/vega/v3.0.json”,
+  "width" : 600,
+  "height" : 400,
+  "padding" : 5, 
+
+  "data" : [{"name":"lost", "values":[{"i":1, "d":4}, {"i":2, "d":8}] }] 
+  };
+  </script>
+  <h1>Hello World</h1>
 </body>
 </html>
