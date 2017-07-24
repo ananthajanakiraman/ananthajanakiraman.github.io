@@ -13,12 +13,33 @@
    "height" : 400,
    "padding" : 5, 
 
-   "data" : [{"name":"lost", "values":[{"i":1, "d":4}, {"i":2, "d":8}] }] 
+   "data" : [{"name":"lost", "values":[{"i":1, "d":4}, {"i":2, "d":8}] }],
+   
+   "scales" : [{
+   "name" : "xscale",
+   "type" : "band",
+   "range" : "width",
+   "domain" : {"data" : "lost", "field" : "i"}
+  },
+  {"name" : "yscale",
+   "type" : "linear",
+   "range" : "height",
+   "domain" : {"data" : "lost", "field" : "d"},
+   "zero" : "true",
+   "nice" : "true"}],
+
+   "axes" : [{"orient" : "bottom", "scale" : "xscale"},
+             {"orient" : "left", "scale" : "yscale"}],
+
+   "marks" : [{
+   "type" : "rect",
+   "from" : {"data" : "lost"}]
    };
    
    vega.embed('#vis',spec);
     
   </script>
   <h1>Hello World</h1>
+  
 </body>
 </html>
