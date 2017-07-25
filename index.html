@@ -123,8 +123,9 @@
 
            data.forEach(function(d) {
                 d.Date = parseDate(d.Date);
-           });
                 d.Price = +d.Price;
+           });
+
 
            x.domain(d3.extent(data, function(d) {
               console.log(d.Date);
