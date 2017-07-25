@@ -106,10 +106,10 @@
        var line = d3.svg.line()
                     .interpolate("basis")
                     .x(function(d) {
-                       return x(d.Date);
+                       return x(d.date);
                      })
                     .y(function(d) {
-                       return y(d.Price);
+                       return y(d.price);
                      });
         
         var svg = d3.select(".chart").append("svg")
@@ -122,19 +122,19 @@
              if (error) throw error; 
 
            data.forEach(function(d) {
-                d.Date = parseDate(d.Date);
-                d.Price = +d.Price;
+                d.date = parseDate(d.Date);
+                d.price = +d.Price;
                 return d;
            });
 
 
            x.domain(d3.extent(data, function(d) {
-              console.log(d.Date);
-             return d.Date;
+              console.log(d.date);
+             return d.date;
            }));
 
            y.domain(d3.extent(data, function(d) {
-             return d.Price;
+             return d.price;
              }));
           
            
