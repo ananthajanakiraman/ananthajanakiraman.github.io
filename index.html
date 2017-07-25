@@ -134,6 +134,8 @@
            y.domain(d3.extent(data, function(d) {
              return d.price;
              }));
+          
+          console.log(d.date);
            
           svg.append("g")
              .attr("class", "x axis")
