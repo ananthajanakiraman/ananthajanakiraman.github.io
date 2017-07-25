@@ -131,17 +131,9 @@
              return d.date;
            }));
 
-           y.domain([
-            /*d3.min(places, function(c) { 
-              return d3.min(c.values, function(v) { 
-              return v.rate; 
-            }); 
-            }),*/
-            0,
-           d3.extent(data, function(d) {
+           y.domain(d3.extent(data, function(d) {
              return d.price;
-             }) 
-           ]);
+             }));
            
           svg.append("g")
              .attr("class", "x axis")
@@ -158,6 +150,15 @@
              .attr("dy", ".71em")
              .style("text-anchor", "end")
              .text("Bitcoin Trend");
+           
+          g.append("path")
+           .datum(data)
+           .attr("fill", "none")
+           .attr("stroke", "steelblue")
+           .attr("stroke-linejoin", "round")
+           .attr("stroke-linecap", "round")
+           .attr("stroke-width", 1.5)
+           .attr("d", line);
            
        });       
         
