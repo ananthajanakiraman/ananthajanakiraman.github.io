@@ -65,6 +65,24 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 
     <!-- Our application script -->
+    
+    <script type="text/javascript">
+        
+        $(document).ready(function() {
+         console.log("Hello world.")
+        });
+       //Set our margin, width and height
+       //Pin the width and height to the .chart div
+       var margin = {
+         top: 20,
+         right: 80,
+         bottom: 30,
+         left: 50
+       },
+       width = $(".chart").width() - margin.left - margin.right,
+       height = $(".chart").height() - margin.top - margin.bottom;
+        
+    </script>
    
 </body>
 </html>
