@@ -152,13 +152,14 @@
              .text("Bitcoin Trend");
            
           svg.append("path")
-           .datum(data)
-           .attr("fill", "none")
-           .attr("stroke", "steelblue")
-           .attr("stroke-linejoin", "round")
-           .attr("stroke-linecap", "round")
-           .attr("stroke-width", 1.5)
-           .attr("d", line);
+             .attr("class", "line")
+             .attr("d", function(d) {
+                  return line(d.values);
+               })
+             .style("stroke", function(d) {
+                  return color(d.name);
+               });
+
            
        });       
         
