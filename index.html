@@ -126,7 +126,22 @@
                 d.price = +d.Price;
                 return d;
            });
-           
+      
+           x.domain(d3.extent(data, function(d) {
+             return d.date;
+           }));
+
+           y.domain([
+            /*d3.min(places, function(c) { 
+              return d3.min(c.values, function(v) { 
+              return v.rate; 
+            }); 
+            }),*/
+            0,
+           d3.extent(data, function(d) {
+             return d.price;
+             }) 
+           ]);
        });       
         
     </script>
