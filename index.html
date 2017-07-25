@@ -124,6 +124,7 @@
            data.forEach(function(d) {
                 d.Date = parseDate(d.Date);
                 d.Price = +d.Price;
+                return d;
            });
 
 
