@@ -111,12 +111,12 @@
         
        d3.tsv("data1.tsv", function(error, data) {
              if (error) throw error; 
-       });
-        
-        data.forEach(function(d) {
-             d.date = parseDate(d.Date);
-        });
-       
+
+           data.forEach(function(d) {
+                d.date = parseDate(d.Date);
+           });
+           
+       });       
         
     </script>
    
