@@ -172,7 +172,7 @@
                 $(".tt").hide();
              })
              
-               var annotation = window.annotation = d3.annotate()
+               var annotation = window.annotation = d3.annotation()
   			.show(true)
                   .text("test")
   			.attr('x', (d) => d.box.x + d.box.width)
