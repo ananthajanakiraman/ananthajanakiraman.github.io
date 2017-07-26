@@ -123,4 +123,18 @@
               .style("stroke", function(d) {
                    return color(d.name);
                });
+             
+         exch.selectAll(".dot")
+             .data(function(d) {
+                  return d.values;
+             })
+             .enter().append("circle")
+             .attr("class", "dot")
+             .attr("cx", function(d) {
+                   return x(d.date); 
+                 })
+             .attr("cy", function(d) {
+                   return y(d.price); 
+                 })
+             .attr("r", 5)
        }); 
