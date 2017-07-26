@@ -119,12 +119,10 @@
                     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
         
         var labels = {
-            "BITCOIN"  : "Bitcoin",
-            "ETHEREUM" : "Ethereum",
-            "LITECOIN" : "Litecoin"
+            "BITCOIN"  : "Bitcoin"
         }
         
-       d3.tsv("data3.tsv", function(error, data) {
+       d3.tsv("databit.tsv", function(error, data) {
              if (error) throw error; 
 
             var colorDomain = d3.keys(
