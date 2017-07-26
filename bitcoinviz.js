@@ -106,7 +106,7 @@
              .call(yAxis)
              .append("text")
              .attr("transform", "rotate(-90)")
-             .attr("y", 6)
+             .attr("y", 60)
              .attr("dy", ".75em")
              .style("text-anchor", "end")
              .text("Closing Price (USD)");
