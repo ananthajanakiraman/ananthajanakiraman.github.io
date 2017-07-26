@@ -118,15 +118,41 @@
                     .append("g")
                     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
         
-       d3.tsv("data1.tsv", function(error, data) {
+        var labels = {
+            "GDAX" : "GDAX Exchange",
+            "BTCe" : "BTCe Exchange",
+            "BitStamp" : "BitStamp Exchange"
+        }
+        
+       d3.tsv("data2.tsv", function(error, data) {
              if (error) throw error; 
 
+            var colorDomain = d3.keys(
+            data[0]).filter(
+            function(key) {
+                return key !== "Date";
+            }
+           )
+            
+           color.domain(colorDomain);
+            
            data.forEach(function(d) {
                 d.date = parseDate(d.Date);
-                d.price = +d.Price;
                 return d;
            });
 
+           var exchange = color.domain().map(function(name) {
+                        return {
+                                name: name,
+                                values: data.map(function(d) {
+                                return {
+                                        date: d.date,
+                                        price: +d[name],
+                                        name : labels[name] 
+                                };
+                             })
+                        };
+           });
 
            x.domain(d3.extent(data, function(d) {
              return d.date;
