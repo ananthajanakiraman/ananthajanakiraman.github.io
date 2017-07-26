@@ -36,6 +36,24 @@ body {
     stroke-width: 0;
 }
 
+.annotation circle {
+  fill: maroon;
+  stroke: maroon;
+}
+
+.annotation path {
+  fill: none;
+  stroke: maroon;
+  shape-rendering: crispEdges;
+}
+
+.annotation text {
+  text-shadow: -2px 0 2px #fff, 
+                0 2px 2px #fff,
+                2px 0 2px #fff, 
+                0 -2px 2px #fff;
+}
+
 /* Tooltip styles below */
 
 .chart {
