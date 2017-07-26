@@ -123,7 +123,8 @@
               .style("stroke", function(d) {
                    return color(d.name);
                });
-             
+         
+     
          exch.selectAll(".dot")
              .data(function(d) {
                   return d.values;
