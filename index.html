@@ -158,9 +158,15 @@
              return d.date;
            }));
 
-           y.domain(d3.extent(data, function(d) {
-             return d.price;
-             }));
+           y.domain([
+                0,
+                d3.max(places, function(c) {
+                  console.log(d3.max(c.values, function(v) { return v.rate; }));
+                  return d3.max(c.values, function(v) {
+                                          return v.rate;
+                               });
+                     })
+          ]);
           
            
           svg.append("g")
