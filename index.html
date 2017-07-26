@@ -84,7 +84,7 @@
        width = $(".chart").width() - margin.left - margin.right,
        height = $(".chart").height() - margin.top - margin.bottom;
         
-       var parseDate = d3.time.format("%d-%m-%Y").parse;
+       var parseDate = d3.time.format("%Y-%m-%d").parse;
 
        var x = d3.time.scale()
                  .range([0, width]);
@@ -129,7 +129,6 @@
 
 
            x.domain(d3.extent(data, function(d) {
-              console.log(data);
              return d.date;
            }));
 
@@ -152,17 +151,17 @@
              .attr("y", 6)
              .attr("dy", ".71em")
              .style("text-anchor", "end")
-             .text("Bitcoin Trend");
+             .text("Average Price");
            
           svg.append("path")
+             .datum(data)
              .attr("class", "line")
-             .attr("d", function(d) {
-                  return line(d.values);
-               })
-             .style("stroke", function(d) {
-                  return color(d.name);
-               });
-
+             .attr("fill", "none")
+             .attr("stroke", "steelblue")
+             .attr("stroke-linejoin", "round")
+             .attr("stroke-linecap", "round")
+             .attr("stroke-width", 1.5)
+             .attr("d", line);
            
        });       
         
