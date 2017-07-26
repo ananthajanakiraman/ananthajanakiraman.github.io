@@ -171,4 +171,16 @@
                 d3.select(this).style("opacity", 0);
                 $(".tt").hide();
              })
+             
+               var annotation = window.annotation = d3.annotate()
+  			.show(true)
+                  .text("test")
+  			.attr('x', (d) => d.box.x + d.box.width)
+  			.attr('dy', 4)
+  			.attr('dx', 4)
+		      .attr('text-anchor', 'start')
+                  .container(svg.append('g'));
+
+              svg.selectAll('.dot').call(annotation);
+             
        }); 
