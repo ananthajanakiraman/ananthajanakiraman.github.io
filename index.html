@@ -129,7 +129,6 @@
 
 
            x.domain(d3.extent(data, function(d) {
-              console.log(data);
              return d.date;
            }));
 
@@ -155,7 +154,13 @@
              .text("Average Price");
            
           svg.append("path")
+             .datum(data)
              .attr("class", "line")
+             .attr("fill", "none")
+             .attr("stroke", "steelblue")
+             .attr("stroke-linejoin", "round")
+             .attr("stroke-linecap", "round")
+             .attr("stroke-width", 1.5)
              .attr("d", line);
            
        });       
