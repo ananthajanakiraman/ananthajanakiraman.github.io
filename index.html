@@ -132,9 +132,9 @@
              return d.date;
            }));
 
-           y.domain(d3.extent(data, function(d) {
+           y.domain([0, d3.extent(data, function(d) {
              return d.price;
-             }));
+             })]);
           
            
           svg.append("g")
