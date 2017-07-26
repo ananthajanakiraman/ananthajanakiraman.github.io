@@ -35,3 +35,32 @@ body {
     fill: lightsteelblue;
     stroke-width: 0;
 }
+
+/* Tooltip styles below */
+
+.chart {
+  height: 500px;
+  position: relative;
+}
+
+.tt {
+	background-color: #fff;
+	padding: 8px;
+	outline: 1px solid #ccc;
+	display: none;
+	position: absolute;
+}
+
+.tt .name {
+	font-size: 14px;
+}
+
+.tt .date {
+	text-transform: uppercase;
+	font-size: 12px;
+}
+
+.tt .price {
+	font-size: 18px;
+	font-weight: bold;
+}
