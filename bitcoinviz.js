@@ -137,4 +137,20 @@
                    return y(d.price); 
                  })
              .attr("r", 5)
+             .on("mouseover", function(d) {
+
+                var displayDate = d.date;
+                var displayVal = "$"+d.price;
+
+                $(".tt").html(
+                "<div class='name'>"+d.name+"</div>"+
+                "<div class='date'>"+displayDate+": </div>"+
+                "<div class='price'>"+displayVal+"</div>"
+               )
+               
+                $(".tt").show();
+               
+                d3.select(this).style("opacity", 1);
+            
+              })
        }); 
