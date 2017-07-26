@@ -118,23 +118,55 @@
                     .append("g")
                     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
         
-       d3.tsv("data1.tsv", function(error, data) {
+        var labels = {
+            "GDAX" : "GDAX Exchange",
+            "BTCe" : "BTCe Exchange",
+            "BitStamp" : "BitStamp Exchange"
+        }
+        
+       d3.tsv("data2.tsv", function(error, data) {
              if (error) throw error; 
 
+            var colorDomain = d3.keys(
+            data[0]).filter(
+            function(key) {
+                return key !== "Date";
+            }
+           )
+            
+           color.domain(colorDomain);
+            
            data.forEach(function(d) {
                 d.date = parseDate(d.Date);
-                d.price = +d.Price;
                 return d;
            });
 
+           var exchange = color.domain().map(function(name) {
+                        return {
+                                name: name,
+                                values: data.map(function(d) {
+                                return {
+                                        date: d.date,
+                                        price: +d[name],
+                                        name : labels[name] 
+                                };
+                             })
+                        };
+           });
 
            x.domain(d3.extent(data, function(d) {
              return d.date;
            }));
 
-           y.domain(d3.extent(data, function(d) {
-             return d.price;
-             }));
+           y.domain([
+                0,
+                d3.max(exchange, function(c) {
+                  console.log(d3.max(c.values, function(v) { return v.price; }));
+                  return d3.max(c.values, function(v) {
+                                          return v.price;
+                               });
+                     })
+          ]);
           
            
           svg.append("g")
@@ -149,20 +181,23 @@
              .append("text")
              .attr("transform", "rotate(-90)")
              .attr("y", 6)
-             .attr("dy", ".71em")
+             .attr("dy", ".75em")
              .style("text-anchor", "end")
-             .text("Average Price");
+             .text("Exchange Closing Price (USD)");
            
-          svg.append("path")
-             .datum(data)
-             .attr("class", "line")
-             .attr("fill", "none")
-             .attr("stroke", "steelblue")
-             .attr("stroke-linejoin", "round")
-             .attr("stroke-linecap", "round")
-             .attr("stroke-width", 1.5)
-             .attr("d", line);
-           
+          var exch = svg.selectAll(".exch")
+                          .data(exchange)
+                          .enter().append("g")
+                          .attr("class", "exch");  
+          
+          exch.append("path")
+              .attr("class", "line")
+              .attr("d", function(d) {
+                   return line(d.values);
+               })
+              .style("stroke", function(d) {
+                   return color(d.name);
+               });
        });       
         
     </script>
