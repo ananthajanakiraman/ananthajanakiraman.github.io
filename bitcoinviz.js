@@ -13,6 +13,7 @@
        height = $(".chart").height() - margin.top - margin.bottom;
         
        var parseDate = d3.time.format("%Y-%m-%d").parse;
+       var formatTime = d3.time.format("%e %B");
 
        var x = d3.time.scale()
                  .range([0, width]);
@@ -139,7 +140,7 @@
              .attr("r", 5)
              .on("mouseover", function(d) {
 
-                var displayDate = d.date;
+                var displayDate = formatTime(d.date);
                 var displayVal = "$"+d.price;
 
                 $(".tt").html(
