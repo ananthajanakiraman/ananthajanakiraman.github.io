@@ -119,12 +119,12 @@
                     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
         
         var labels = {
-            "GDAX" : "GDAX Exchange",
-            "BTCe" : "BTCe Exchange",
-            "BitStamp" : "BitStamp Exchange"
+            "BITCOIN"  : "Bitcoin",
+            "ETHEREUM" : "Ethereum",
+            "LITECOIN" : "Litecoin"
         }
         
-       d3.tsv("data2.tsv", function(error, data) {
+       d3.tsv("data3.tsv", function(error, data) {
              if (error) throw error; 
 
             var colorDomain = d3.keys(
@@ -183,7 +183,7 @@
              .attr("y", 6)
              .attr("dy", ".75em")
              .style("text-anchor", "end")
-             .text("Exchange Closing Price (USD)");
+             .text("Closing Price (USD)");
            
           var exch = svg.selectAll(".exch")
                           .data(exchange)
