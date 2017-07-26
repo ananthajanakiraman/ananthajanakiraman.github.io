@@ -185,6 +185,11 @@
              .style("text-anchor", "end")
              .text("Exchange Closing Price (USD)");
            
+          var city = svg.selectAll(".city")
+                          .data(exchange)
+                          .enter().append("g")
+                          .attr("class", "city");  
+           
        });       
         
     </script>
