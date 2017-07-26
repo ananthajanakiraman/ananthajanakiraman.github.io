@@ -1,20 +1,6 @@
       $(document).ready(function() {
          console.log("Hello world.")
         });
-
-        var annotations = [
-        {
-            "cx": 625,
-            "cy": 111,
-            "r": 109,
-            "text": "The longer Old Faithful lays dormant, the longer the eruption last",
-            "textWidth": 140,
-            "textOffset": [
-             121,
-             186
-             ]
-        }
-        ];
  
        var margin = {
          top: 20,
@@ -123,10 +109,6 @@
              .attr("dy", ".75em")
              .style("text-anchor", "end")
              .text("Closing Price (USD)");
-             
-         svg.append("g")
-            .attr("class", "annotations")
-            .call(annotations);
            
           var exch = svg.selectAll(".exch")
                           .data(exchange)
