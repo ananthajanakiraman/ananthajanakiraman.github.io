@@ -153,4 +153,21 @@
                 d3.select(this).style("opacity", 1);
             
               })
+             
+             .on("mousemove", function(d) {
+
+               var xPos = d3.mouse(this)[0] + margin.left + 10;
+               var yPos = d3.mouse(this)[1] + margin.top + 10;
+
+               $(".tt").css({
+                  "left": xPos + "px",
+                  "top": yPos + "px"
+               })
+
+             })
+             
+             .on("mouseout", function(d) {
+                d3.select(this).style("opacity", 0);
+                $(".tt").hide();
+             })
        }); 
