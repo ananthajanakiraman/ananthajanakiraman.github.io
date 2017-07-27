@@ -100,5 +100,21 @@
                    return y(d.price); 
                  })
              .attr("r", 5)
+             .on("mouseover", function(d) {
+
+                var displayDate = formatTime(d.date);
+                var displayVal = "$"+d.price;
+
+                $(".tt").html(
+                "<div class='name'>"+displayDate+"</div>"+
+                "<div class='date'>"+displayDate+": </div>"+
+                "<div class='price'>"+displayVal+"</div>"
+               )
+               
+                $(".tt").show();
+               
+                d3.select(this).style("opacity", 1);
+            
+              })
 	       
        }); 
