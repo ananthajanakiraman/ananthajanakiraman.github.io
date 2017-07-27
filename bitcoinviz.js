@@ -84,7 +84,7 @@
              return d.date;
            }));
 
-	   console.log(maximum1,exchange[0]);
+	   console.log(maximum1,exchange[0][0]);
 	       
            y.domain([
                 0,
