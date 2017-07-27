@@ -182,8 +182,8 @@
 			connector:{
 				end:"arrow"
 			},
-			x:xPos,
-			y:yPos,
+			x:200,
+			y:300,
 			dx:30,
 			dy:-30
 
