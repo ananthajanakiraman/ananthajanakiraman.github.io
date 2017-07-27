@@ -11,7 +11,8 @@
        width = $(".chart").width() - margin.left - margin.right,
        height = $(".chart").height() - margin.top - margin.bottom;
         
-       var parseDate = d3.timeFormat("%Y-%m-%d").parse;
+       var parseDate1 = d3.timeFormat("%Y-%m-%d").parse;
+       var parseDate  = d3.timeParse("%Y-%m-%d");
        var formatTime = d3.timeFormat("%e %B");
 
        var x = d3.scaleTime()
