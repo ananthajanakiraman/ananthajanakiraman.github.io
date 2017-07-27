@@ -81,10 +81,11 @@
              return d.date;
            }));
 
+	   console.log(d3.max(exchange, function(c) { return d3.max(c.values, function(v) {return v.price;})}));
+	       
            y.domain([
                 0,
                 d3.max(exchange, function(c) {
-                  console.log(d3.max(c.values, function(v) {return v.price;}));
                   return d3.max(c.values, function(v) {
                                           return v.price;
                                });
