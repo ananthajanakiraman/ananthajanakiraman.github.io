@@ -182,8 +182,8 @@
 			connector:{
 				end:"arrow"
 			},
-			x:coords[0]-margin.left,
-			y:coords[1]-margin.top,
+			x:50-margin.left,
+			y:50-margin.top,
 			dx:30,
 			dy:-30
 
