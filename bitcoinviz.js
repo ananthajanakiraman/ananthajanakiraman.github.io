@@ -78,13 +78,13 @@
            });
 
 	   var maximum1 = d3.max(exchange, function(c) { return d3.max(c.values, function(v) {return v.price;})});
- 	   var maximum = data.filter(e=>e[name]===maximum1)[0];
+ 	   //var maximum = data.filter(e=>e[name]===maximum1)[0];
 	   
            x.domain(d3.extent(data, function(d) {
              return d.date;
            }));
 
-	   console.log(maximum1,maximum);
+	   console.log(maximum1,data.filter(function(d) {return d.BITCOIN;}));
 	       
            y.domain([
                 0,
