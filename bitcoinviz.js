@@ -190,7 +190,7 @@
 		}];
 
 		const makeThis = d3.annotation()
-			.type(type)
+			.type(d3.annotationLabel)
 			.annotations(thisAnno)
 			.editMode(true)
 
