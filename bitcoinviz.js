@@ -172,6 +172,8 @@
                 $(".tt").hide();
              })
              
+	     var coordinates=d3.mouse(this);
+	       
              const thisAnno = [{
 		note: {
 			label:"test",
@@ -182,15 +184,17 @@
 			connector:{
 				end:"arrow"
 			},
-			x:50-margin.left,
-			y:50-margin.top,
+			x:coordinates[0]-margin.left,
+			y:coordinates[1]-margin.top,
 			dx:30,
 			dy:-30
 
 		}];
 
+	        const type = d3.annotationLabel
+		
 		const makeThis = d3.annotation()
-			.type(d3.annotationLabel)
+			.type(type)
 			.annotations(thisAnno)
 			.editMode(true)
 
