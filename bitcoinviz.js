@@ -78,13 +78,13 @@
            });
 
 	   var maximum1 = d3.max(exchange, function(c) { return d3.max(c.values, function(v) {return v.price;})});
- 	   var maximum = d3.max(data, function(d) { return d[name]; });
+ 	   var maximum = data.filter(e=>e[name]===maximum1)[0];
 	   
            x.domain(d3.extent(data, function(d) {
              return d.date;
            }));
 
-	   console.log(maximum1,exchange[0][0]);
+	   console.log(maximum1,maximum);
 	       
            y.domain([
                 0,
