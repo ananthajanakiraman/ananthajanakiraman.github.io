@@ -14,7 +14,7 @@
        var parseDate = d3.timeFormat("%Y-%m-%d").parse;
        var formatTime = d3.timeFormat("%e %B");
 
-       var x = d3.time.scale()
+       var x = d3.scaleTime()
                  .range([0, width]);
 
        var y = d3.scale.linear()
