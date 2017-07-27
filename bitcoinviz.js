@@ -169,34 +169,5 @@
                 d3.select(this).style("opacity", 0);
                 $(".tt").hide();
              })
-	       
-             const thisAnno = [{
-		note: {
-			label:"test",
-			title:"test",
-			wrap:150,
-			align:"middle",
-			},
-                        connector: {
-				"arrow"
-			},
-			x:x(parseDate(maximumObj.Date)),
-			y:y(maximumObj.BITCOIN),
-			dx:30,
-			dy:-30
-
-		}];
-
-	        const type = d3.annotationLabel
-		
-		const makeThis = d3.annotation()
-			.type(type)
-			.annotations(thisAnno)
-			.editMode(true)
-
-		svg.append("g")
-			.attr("transform","translate("+margin.left+","+margin.top+")")
-			.attr("class","annotation-group")
-			.call(makeThis)
              
        }); 
