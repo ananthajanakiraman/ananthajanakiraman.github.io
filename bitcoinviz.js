@@ -184,8 +184,8 @@
 			connector:{
 				end:"arrow"
 			},
-			x:200,
-			y:300,
+			x:x(parseDate(maximumObj.Date)),
+			y:y(maximumObj.BITCOIN),
 			dx:30,
 			dy:-30
 
