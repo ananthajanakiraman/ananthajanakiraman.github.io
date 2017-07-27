@@ -84,7 +84,7 @@
              return d.date;
            }));
 
-	   console.log(maximum1,exchange["BITCOIN"]);
+	   console.log(maximum1,exchange[0]);
 	       
            y.domain([
                 0,
