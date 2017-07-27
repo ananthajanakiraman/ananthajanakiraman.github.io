@@ -181,17 +181,18 @@
 			wrap:150,
 			align:"middle",
 			},
-			connector:{
-				end:"arrow"
-			},
-			x:x(parseDate(maximumObj.Date)),
-			y:y(maximumObj.BITCOIN),
+                        subject: {
+                        x1: 0,
+                        x2: 500
+                        },
+			x:d => x(parseDate(maximumObj.Date)),
+			y:d => y(maximumObj.BITCOIN),
 			dx:30,
 			dy:-30
 
 		}];
 
-	        const type = d3.annotationLabel
+	        const type = d3.annotationXYThreshold
 		
 		const makeThis = d3.annotation()
 			.type(type)
