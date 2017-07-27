@@ -84,7 +84,7 @@
              return d.date;
            }));
 
-	   console.log(maximum1,maximumObj.Date);
+	   console.log(maximum1,x(maximumObj.Date));
 	       
            y.domain([
                 0,
