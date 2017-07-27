@@ -72,10 +72,12 @@
         svg.append("g")
              .attr("transform", "translate(0,0)")
              .attr("class", "y axis")
-             .call(yAxis)
-             .append("text")
+             .call(yAxis);
+          
+	 svg.append("g")
+	     .append("text")
              .attr("transform", "rotate(-90)")
-             .attr("y", 6)
+             .attr("y", 10)
              .attr("dy", ".75em")
              .style("text-anchor", "end")
              .text("Closing Price (USD)");
@@ -85,6 +87,6 @@
               .attr("class", "line")
 	      .attr("stroke","#777")
 	      .attr("stroke-width","1.5px")
-              .attr("d", line)
+              .attr("d", line);
 	       
        }); 
