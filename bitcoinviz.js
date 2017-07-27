@@ -17,7 +17,7 @@
        var x = d3.scaleTime()
                  .range([0, width]);
 
-       var y = d3.scale.linear()
+       var y = d3.scaleLinear()
                  .range([height, 0]);
         
        //Color exists as a Scale. 
