@@ -185,8 +185,8 @@
                         x1: 0,
                         x2: 500
                         },
-			x:d => x(parseDate(maximumObj.Date)),
-			y:d => y(maximumObj.BITCOIN),
+			x:x(parseDate(maximumObj.Date)),
+			y:y(maximumObj.BITCOIN),
 			dx:30,
 			dy:-30
 
