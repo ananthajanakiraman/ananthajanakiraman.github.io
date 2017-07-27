@@ -50,36 +50,35 @@
        d3.tsv("databit.tsv", function(error, data) {
              if (error) throw error; 
 
-            //var colorDomain = d3.keys(
-            //data[0]).filter(
-            //function(key) {
-            //    return key !== "Date";
-            //}
-           //)
+            var colorDomain = d3.keys(
+            data[0]).filter(
+            function(key) {
+                return key !== "Date";
+            }
+           )
             
-           //color.domain(colorDomain);
+           color.domain(colorDomain);
             
            data.forEach(function(d) {
                 d.date = parseDate(d.Date);
-		d.price = +d.BITCOIN;
                 return d;
            });
 
-           //var exchange = color.domain().map(function(name) {
-           //             return {
-           //                     name: name,
-           //                     values: data.map(function(d) {
-           //                     return {
-           //                             date: d.date,
-           //                             price: +d[name],
-           //                             name : labels[name] 
-           //                     };
-           //                  })
-           //             };
-           //});
+           var exchange = color.domain().map(function(name) {
+                        return {
+                                name: name,
+                                values: data.map(function(d) {
+                                return {
+                                        date: d.date,
+                                        price: +d[name],
+                                        name : labels[name] 
+                                };
+                             })
+                        };
+           });
 
-	   var maximum1 = d3.max(data, function(d) {return d.price;});
- 	   var maximumObj = data.filter(function(d) {return d.price == maximum1;})[0];
+	   var maximum1 = d3.max(exchange, function(c) { return d3.max(c.values, function(v) {return v.price;})});
+ 	   var maximumObj = data.filter(function(d) {return d.BITCOIN == maximum1;})[0];
 	   
            x.domain(d3.extent(data, function(d) {
              return d.date;
@@ -89,12 +88,11 @@
 	       
            y.domain([
                 0,
-           //     d3.max(exchange, function(c) {
-           //       return d3.max(c.values, function(v) {
-           //                               return v.price;
-           //                    });
-           //          })
-		   d3.max(data, function(d) {return d.price;})
+                d3.max(exchange, function(c) {
+                  return d3.max(c.values, function(v) {
+                                          return v.price;
+                               });
+                     })
           ]);
           
            
@@ -115,18 +113,24 @@
              .text("Closing Price (USD)");
            
           var exch = svg.selectAll(".exch")
-                          .data(data)
+                          .data(exchange)
                           .enter().append("g")
                           .attr("class", "exch");  
           
           exch.append("path")
               .attr("class", "line")
-              .attr("d", line)
-              .style("stroke", "lightsteelblue");
+              .attr("d", function(d) {
+                   return line(d.values);
+               })
+              .style("stroke", function(d) {
+                   return color(d.name);
+               });
          
      
          exch.selectAll(".dot")
-             .data(data)
+             .data(function(d) {
+                  return d.values;
+             })
              .enter().append("circle")
              .attr("class", "dot")
              .attr("cx", function(d) {
@@ -142,7 +146,7 @@
                 var displayVal = "$"+d.price;
 
                 $(".tt").html(
-                "<div class='name'>"+displayDate+"</div>"+
+                "<div class='name'>"+d.name+"</div>"+
                 "<div class='date'>"+displayDate+": </div>"+
                 "<div class='price'>"+displayVal+"</div>"
                )
@@ -169,5 +173,5 @@
                 d3.select(this).style("opacity", 0);
                 $(".tt").hide();
              })
-             
+	       
        }); 
