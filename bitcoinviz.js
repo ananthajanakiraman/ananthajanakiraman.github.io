@@ -84,7 +84,7 @@
              return d.date;
            }));
 
-	   console.log(d3.max(exchange, function(c) { return d3.max(c.values, function(v) {return v.price;})}));
+	   console.log(maximumObj);
 	       
            y.domain([
                 0,
