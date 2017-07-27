@@ -21,7 +21,7 @@
                  .range([height, 0]);
         
        //Color exists as a Scale. 
-       var color = d3.scale.category10();
+       var color = d3.scaleCategory10();
 
        var xAxis = d3.svg.axis()
                      .scale(x)
