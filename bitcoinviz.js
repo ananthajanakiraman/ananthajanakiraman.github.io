@@ -78,7 +78,7 @@
            });
 
 	   var maximum1 = d3.max(exchange, function(c) { return d3.max(c.values, function(v) {return v.price;})});
- 	   var maximumObj = data.filter(function(d) {return d.BITCOIN == maximum1;})[1];
+ 	   var maximumObj = data.filter(function(d) {return d.BITCOIN == maximum1;})[0];
 	   
            x.domain(d3.extent(data, function(d) {
              return d.date;
