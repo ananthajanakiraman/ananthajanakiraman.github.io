@@ -171,8 +171,6 @@
                 d3.select(this).style("opacity", 0);
                 $(".tt").hide();
              })
-             
-	     var coordinates=d3.mouse(this);
 	       
              const thisAnno = [{
 		note: {
@@ -184,8 +182,8 @@
 			connector:{
 				end:"arrow"
 			},
-			x:coordinates[0]-margin.left,
-			y:coordinates[1]-margin.top,
+			x:xPos,
+			y:yPos,
 			dx:30,
 			dy:-30
 
