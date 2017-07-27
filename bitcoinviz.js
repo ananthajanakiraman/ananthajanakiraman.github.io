@@ -54,4 +54,14 @@
                   d.date = parseDate(d.Date);
 		  d.price = +d.BITCOIN;
            });
+	       
+       x.domain(d3.extent(data, function(d) {
+             return d.date;
+           }));
+	       
+        y.domain([
+                0,
+		d3.max(data, function(d) {return d.price;})
+          ]);
+          
        }); 
