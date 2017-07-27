@@ -79,7 +79,7 @@
 
 	   var maximum1 = d3.max(exchange, function(c) { return d3.max(c.values, function(v) {return v.price;})});
  	   var maximum = d3.max(data, function(d) { return d[name]; });
-	   var maximumObj = data.filter(function(d) { return d.price == maximum1;})[0];
+	   var maximumObj = data.filter(function(d) { return d.price == maximum1;});
 	       
            x.domain(d3.extent(data, function(d) {
              return d.date;
