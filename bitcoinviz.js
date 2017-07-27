@@ -28,7 +28,7 @@
        var yAxis = d3.axisLeft(y);
        
        var line = d3.line()
-                    .interpolate("basis")
+                    .curve(d3.curveBasis)
                     .x(function(d) {
                        return x(d.date);
                      })
