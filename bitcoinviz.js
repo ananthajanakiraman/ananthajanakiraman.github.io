@@ -84,7 +84,7 @@
              return d.date;
            }));
 
-	   console.log(maximum1,data.filter(function(d) {return d.BITCOIN===maximum1;}));
+	   console.log(maximum1,data.filter(function(d) {return d.BITCOIN[1];}));
 	       
            y.domain([
                 0,
