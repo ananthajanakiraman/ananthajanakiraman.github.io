@@ -142,7 +142,7 @@
                 var displayVal = "$"+d.price;
 
                 $(".tt").html(
-                "<div class='name'>"BITCOIN"</div>"+
+                "<div class='name'>"+displayDate+"</div>"+
                 "<div class='date'>"+displayDate+": </div>"+
                 "<div class='price'>"+displayVal+"</div>"
                )
