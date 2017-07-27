@@ -172,15 +172,31 @@
                 $(".tt").hide();
              })
              
-               var annotation = window.annotation = d3.annotation()
-  			.show(true)
-                  .text("test")
-  			.attr('x', (d) => d.box.x + d.box.width)
-  			.attr('dy', 4)
-  			.attr('dx', 4)
-		      .attr('text-anchor', 'start')
-                  .container(svg.append('g'));
+             const thisAnno = [{
+		note: {
+			label:"test",
+			title:"test",
+			wrap:150,
+			align:"middle",
+			},
+			connector:{
+				end:"arrow"
+			},
+			x:coords[0]-margin.left,
+			y:coords[1]-margin.top,
+			dx:30,
+			dy:-30
 
-              svg.selectAll('.dot').call(annotation);
+		}];
+
+		const makeThis = d3.annotation()
+			.type(type)
+			.annotations(thisAnno)
+			.editMode(true)
+
+		svg.append("g")
+			.attr("transform","translate("+margin.left+","+margin.top+")")
+			.attr("class","annotation-group")
+			.call(makeThis)
              
        }); 
