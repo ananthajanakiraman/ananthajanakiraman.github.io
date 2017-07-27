@@ -89,4 +89,16 @@
 	      .attr("stroke-width","1.5px")
               .attr("d", line);
 	       
+	   svg.selectAll(".dot")
+             .datum(data)
+             .enter().append("circle")
+             .attr("class", "dot")
+             .attr("cx", function(d) {
+                   return x(d.date); 
+                 })
+             .attr("cy", function(d) {
+                   return y(d.price); 
+                 })
+             .attr("r", 5)
+	       
        }); 
