@@ -23,15 +23,11 @@
        //Color exists as a Scale. 
        var color = d3.scaleOrdinal(d3.schemeCategory10);
 
-       var xAxis = d3.svg.axis()
-                     .scale(x)
-                     .orient("bottom");
+       var xAxis = d3.axisBottom(x);
 
-       var yAxis = d3.svg.axis()
-                     .scale(y)
-                     .orient("left");
+       var yAxis = d3.axisLeft(y);
        
-       var line = d3.svg.line()
+       var line = d3.line()
                     .interpolate("basis")
                     .x(function(d) {
                        return x(d.date);
