@@ -102,7 +102,7 @@
 	
 	  svg.append("path")
 	      .data(data)
-	      .attr("class", "area")
+	      .attr("class", "area area")
               .attr("d", area);
 	       
 	   svg.selectAll(".dot")
