@@ -82,18 +82,13 @@
              .style("text-anchor", "end")
              .text("Closing Price (USD)");
 
-	  var linedraw = svg.selectAll(".linedraw")
-                          .datum(data)
-                          .enter().append("g")
-                          .attr("class", "linedraw");  
-          
-
-	  linedraw.append("path")
-	      .datum(data)
+	  svg.append("path")
+	      .data([data])
+	      .attr("class", "line")
               .attr("d", line);
 	       
-	   linedraw.selectAll(".dot")
-             .datum(data)
+	   svg.selectAll(".dot")
+             .data(data)
              .enter().append("circle")
              .attr("class", "dot")
              .attr("cx", function(d) {
@@ -102,22 +97,6 @@
              .attr("cy", function(d) {
                    return y(d.price); 
                  })
-             .attr("r", 5)
-             .on("mouseover", function(d) {
-
-                var displayDate = formatTime(d.date);
-                var displayVal = "$"+d.price;
-
-                $(".tt").html(
-                "<div class='name'>"+displayDate+"</div>"+
-                "<div class='date'>"+displayDate+": </div>"+
-                "<div class='price'>"+displayVal+"</div>"
-               )
-               
-                $(".tt").show();
-               
-                d3.select(this).style("opacity", 1);
-            
-              })
+             .attr("r", 5);
 	       
        }); 
