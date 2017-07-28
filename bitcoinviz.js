@@ -1,3 +1,5 @@
+      !(function (d3) {
+	      
       $(document).ready(function() {
          console.log("Hello world.")
         });
@@ -237,3 +239,5 @@
 	        .style("font-family","Arial")
 
        }); 
+	      
+      });
