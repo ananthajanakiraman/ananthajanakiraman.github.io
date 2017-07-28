@@ -159,7 +159,7 @@
 		const d1 = data[i];
 		const d = x0 - d0.date > d1.date - x0 ? d1 : d0;
 
-	         console.log(d1.date);
+	         console.log(d0.date, d1.date);
 				       
 	         focus.select("text.y3--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
 	              .text(formatTime(d.date));
