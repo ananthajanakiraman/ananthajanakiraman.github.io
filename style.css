@@ -44,6 +44,12 @@ text {
   pointer-events: all;
 }
 
+.focus circle {
+  fill: white;
+  stroke: steelblue;
+  stroke-width:2px;
+}
+
 /* Tooltip styles below */
 
 .chart {
