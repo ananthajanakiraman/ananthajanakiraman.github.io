@@ -149,7 +149,7 @@
 		.attr("class", "overlay")
 		.attr("width", width)
 		.attr("height", height)
-	        .on("mouseover", function() {focus.style("display",null)});
+	        .on("mouseover", function() {focus.style("display",null)})
 	        .on("mousemove", function(d) {
                  focus.select("text.y3--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
 	              .text(formatTime(d.date));
