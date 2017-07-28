@@ -154,7 +154,7 @@
 	   .attr("class", "overlay")
 	   .attr("width",width)
 	   .attr("height",height)
-	   .on("mouseover", function() { focus.style("display", "null"); })
+	   .on("mouseover", function() { focus.style("display", null); })
 	   .on("mouseout", function() { focus.style("display","none"); })
 	   .on("mousemove", mousemove); 
 
@@ -165,7 +165,7 @@
 		    d1 = data[i],
 		    d = x0 - d0.date > d1.date - x0 ? d1 : d0;
 		
-		 focus.style("display", "null"); 
+		 focus.style("display", null); 
 	         focus.select("text.y3--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
 	              .text(formatTime(d.date));
 	         focus.select("text.y4--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
@@ -189,8 +189,9 @@
                    return y(d.price); 
                  })
              .attr("r", 5)
-	        .on("mouseover", function() {focus.style("display","null")})
+	        .on("mouseover", function() {focus.style("display",null)})
 	        .on("mousemove", function(d) {
+		 focus.style("display",null);
                  focus.select("text.y3--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
 	              .text(formatTime(d.date));
 	         focus.select("text.y4--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
