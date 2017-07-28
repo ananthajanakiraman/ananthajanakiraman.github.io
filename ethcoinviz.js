@@ -1,4 +1,6 @@
     !(function (d3) {
+
+    $("bcontent").empty();
 	    
     $(document).ready(function() {
          console.log("Hello world.")
