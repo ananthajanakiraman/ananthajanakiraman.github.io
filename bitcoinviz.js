@@ -153,11 +153,13 @@
 	   .on("mouseout", function() { focus.style("display","none"); })
 	   .on("mousemove",function() { focus.style("display",null); 
 				       
-		var x0 = x.invert(d3.mouse(this)[0]);
-	        var i = bisectDate(data, x0, 1);
-		var d0 = data[i - 1];
-		var dm = data[i];
-		var d = x0 - d0.date > dm.date - x0 ? dm : d0;
+		const x0 = x.invert(d3.mouse(this)[0]);
+	        const i = bisectDate(data, x0, 1);
+		const d0 = data[i - 1];
+		const d1 = data[i];
+		const d = x0 - d0.date > d1.date - x0 ? d1 : d0;
+
+	         console.log(d0, d1, i, x0, data[i-1], data[i]);
 				       
 	         focus.select("text.y3--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
 	              .text(formatTime(d.date));
