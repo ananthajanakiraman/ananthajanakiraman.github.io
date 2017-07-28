@@ -54,7 +54,6 @@
     </div>
 
 
-
     <!-- jQuery.js -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     
@@ -73,7 +72,42 @@
     
     <!-- Our application script -->
     
-    <script src="bitcoinviz.js" charset="utf-8"></script>
+         <div class="tabbable">
+            <ul class="nav nav-tabs">
+                <li class="active"><a class="atab" href="#a_tab" data-toggle="tab">A</a></li>
+                <li><a class="btab" href="#b_tab" data-toggle="tab">B</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="a_tab">
+                    <h1>A</h1>
+                    <acontent></acontent>
+                </div>
+                <div class="tab-pane" id="b_tab">
+                    <h1>B</h1>
+                    <bcontent></bcontent>
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            $.ajaxSetup ({
+                // Disable caching of AJAX responses
+                // Used when debugging
+                cache: false
+            });
+        
+            $.getScript("a.js");
+            $(".atab").click(function() {
+                $.getScript("bitcoinviz.js");
+            })
+        </script>
+        <script>
+            $(".btab").click(function() {
+                $.getScript("bitcoinviz.js");
+            })
+        </script>
+    
+    <!--<script src="bitcoinviz.js" charset="utf-8"></script>-->
    
 </body>
 </html>
