@@ -1,10 +1,6 @@
       !(function (d3) {
 
       $("acontent").empty();
-	      
-      $(document).ready(function() {
-         console.log("Hello world.")
-        });
  
        var margin = {
          top: 20,
