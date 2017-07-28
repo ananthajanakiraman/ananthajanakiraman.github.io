@@ -106,7 +106,6 @@
               .attr("d", area);
 	       
 	   var focus = svg.append("g")
-	        .attr("display","none")
 		.attr("class", "focus");
 	
 	   focus.append("circle")
@@ -144,6 +143,12 @@
 		.attr("fill","#000")
 		.attr("dx", 8)
 		.attr("dy", "1em");
+	       
+	svg.selectAll("rect")
+	   .enter().append("rect")
+	   .attr("width",width)
+	   .attr("height",height)
+	   .on("mouseover",function() { focus.style("display",null); });
 	       
         svg.selectAll(".dot")
              .data(data)
