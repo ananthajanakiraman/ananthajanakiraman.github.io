@@ -160,7 +160,5 @@
 		.text('Peak: ' + '$' + maximum1)
 	        .style("font-size","14px")
 	        .style("font-weight", "bold")
-	        .style("stroke","white")
-	        .style("stroke-width", "4px")
-	        .style("opacity", 0.8)
+
        }); 
