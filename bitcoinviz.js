@@ -168,19 +168,7 @@
 	         focus.select(".x--line").attr("transform", "translate(" + x(d.date) + "," + height + ")");
 	
 	      })
-	     .on("mouseover", function(d) {
-                 div.transition()
-                    .duration(200)
-                    .style("opacity", .9);
-                 div.html(formatTime(d.date) + "<br/>" + "$" + d.price)
-                    .style("left", (d3.event.pageX) + "px")
-                    .style("top", (d3.event.pageY - 28) + "px");
-               })
-	       .on("mouseout", function(d) {
-                   div.transition()
-                      .duration(500)
-                      .style("opacity", 0);
-                });
+              .on("mouseout", function() { focus.style("display", "none"); });
 	       
                var maximum1 = d3.max(data, function(d) {return d.price;});
  	       var maximumObj = data.filter(function(d) {return d.price == maximum1;})[0];
