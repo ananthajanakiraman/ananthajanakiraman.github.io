@@ -106,8 +106,7 @@
               .attr("d", area);
 	       
 	   var focus = svg.append("g")
-		.attr("class", "focus")
-		.style("display", "none");
+		.attr("class", "focus");
 	
 	focus.append("circle")
 	     .attr("class","circle")
@@ -118,7 +117,7 @@
 		.style("shape-rendering", "crispEdges")
 		.style("stroke-dasharray", "1,1")
 		.style("opacity", 0.8)
-		.attr("y",-height)
+		.attr("y",-height);
 		
 	focus.append("text").attr("class", "y1--text")
 		.style("stroke", "white")
