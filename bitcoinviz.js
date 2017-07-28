@@ -15,6 +15,10 @@
        var parseDate  = d3.timeParse("%Y-%m-%d");
        var formatTime = d3.timeFormat("%e %B");
 
+       var div = d3.select("body").append("div")
+                   .attr("class", "tooltip")
+                   .style("opacity", 0);
+
        var x = d3.scaleTime()
                  .range([0, width]);
 
@@ -97,6 +101,14 @@
              .attr("cy", function(d) {
                    return y(d.price); 
                  })
-             .attr("r", 5);
+             .attr("r", 5)
+	     .on("mouseover", function(d) {
+                 div.transition()
+                    .duration(200)
+                    .style("opacity", .9);
+                 div.html(formatTime(d.date) + "<br/>" + d.price)
+                    .style("left", (d3.event.pageX) + "px")
+                    .style("top", (d3.event.pageY - 28) + "px");
+               })
 	       
        }); 
