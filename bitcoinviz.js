@@ -144,19 +144,19 @@
 		.attr("dx", 8)
 		.attr("dy", "1em");
 	       
-        var bisectDate = d3.bisector(function(d) { return d.date; }).left;
-	       
-	   svg.append("rect")
-		.attr("class", "overlay")
-		.attr("width", width)
-		.attr("height", height)
+        svg.selectAll(".dot")
+             .data(data)
+             .enter().append("circle")
+             .attr("class", "dot")
+             .attr("cx", function(d) {
+                   return x(d.date); 
+                 })
+             .attr("cy", function(d) {
+                   return y(d.price); 
+                 })
+             .attr("r", 5)
 	        .on("mouseover", function() {focus.style("display",null)})
 	        .on("mousemove", function(d) {
-	        var x0 = x.invert(d3.mouse(this)[0]),
-		i = bisectDate(data, x0, 1),
-		d0 = data[i - 1],
-		d1 = data[i],
-		d = x0 - d0.date > d1.date - x0 ? d1 : d0;
                  focus.select("text.y3--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
 	              .text(formatTime(d.date));
 	         focus.select("text.y4--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
