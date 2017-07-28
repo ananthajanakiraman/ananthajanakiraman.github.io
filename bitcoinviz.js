@@ -156,8 +156,8 @@
 		var x0 = x.invert(d3.mouse(this)[0]);
 	        var i = bisectDate(data, x0, 1);
 		var d0 = data[i - 1];
-		var d1 = data[i];
-		var d = x0 - d0.date > d1.date - x0 ? d1 : d0;
+		var dm = data[i];
+		var d = x0 - d0.date > dm.date - x0 ? dm : d0;
 				       
 	         focus.select("text.y3--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
 	              .text(formatTime(d.date));
