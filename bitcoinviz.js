@@ -105,6 +105,28 @@
 	      .attr("fill","lightsteelblue")
               .attr("d", area);
 	       
+	   var focus = svg.append("g")
+		.attr("class", "focus")
+		.style("display", "none");
+	
+	focus.append("circle")
+	     .attr("class","circle")
+	     .attr("r", 3);
+	
+	focus.append("line").attr("class", "x--line")
+		.style("stroke", "#777")
+		.style("shape-rendering", "crispEdges")
+		.style("stroke-dasharray", "1,1")
+		.style("opacity", 0.8)
+		.attr("y",-height)
+		
+	focus.append("text").attr("class", "y1--text")
+		.style("stroke", "white")
+		.style("stroke-width", "3px")
+		.style("opacity", 0.8)
+		.attr("dx", 8)
+		.attr("dy", "0em");
+	       
 	   svg.selectAll(".dot")
              .data(data)
              .enter().append("circle")
