@@ -35,7 +35,11 @@
                     </div>
                 </div>
             </header>
+            
+            <section class="row">
 
+            <div class="col-md-12 chart">
+                
             <div class="tabbable">
             <ul class="nav nav-tabs">
                 <li class="active"><a class="atab" href="#a_tab" data-toggle="tab">A</a></li>
@@ -52,10 +56,6 @@
                 </div>
             </div>
             </div>
-            
-            <section class="row">
-
-            <div class="col-md-12 chart">
                 <!-- ********* -->
                 <!-- The empty div for the tooltip goes inside of our chart div -->
                 <!-- ********* -->
@@ -103,6 +103,7 @@
             })
         </script>
         <script>
+            
             $(".btab").click(function() {
                 $.getScript("ethcoinviz.js");
             })
