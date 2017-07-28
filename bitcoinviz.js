@@ -14,7 +14,8 @@
        },
        width = $(".chart").width() - margin.left - margin.right,
        height = $(".chart").height() - margin.top - margin.bottom;
-        
+       console.log(width,height);
+	      
        var parseDate1 = d3.timeFormat("%Y-%m-%d").parse;
        var parseDate  = d3.timeParse("%Y-%m-%d"),
 	   bisectDate = d3.bisector(function(d) { return d.date; }).left;
