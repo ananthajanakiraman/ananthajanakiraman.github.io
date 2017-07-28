@@ -67,7 +67,11 @@
                   d.date = parseDate(d.Date);
 		  d.price = +d.BITCOIN;
            });
-	       
+
+         data.sort(function(a, b) {
+              return a.date - b.date;
+           });
+
        x.domain(d3.extent(data, function(d) {
              return d.date;
            }));
@@ -155,7 +159,7 @@
 
 	    function mousemove() {
 		var x0 = x.invert(d3.mouse(this)[0]),
-	            i = bisectDate(data, x0),
+	            i = bisectDate(data, x0, 1),
 		    d0 = data[i - 1],
 		    d1 = data[i],
 		    d = x0 - d0.date > d1.date - x0 ? d1 : d0;
