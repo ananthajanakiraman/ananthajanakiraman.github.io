@@ -149,6 +149,18 @@
 	   .attr("width",width)
 	   .attr("height",height)
 	   .on("mouseout", function() { focus.style("display","none"); })
+	   .on("mousemove",function() { focus.style("display",null); 
+	         focus.select("text.y3--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
+	              .text(formatTime(d.date));
+	         focus.select("text.y4--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
+	              .text(formatTime(d.date));
+	         focus.select("text.y1--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 16) + ")")
+	              .text("$" + d.price);
+	         focus.select("text.y2--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 16) + ")")
+	              .text("$" + d.price);
+                 focus.select(".circle").attr("transform", "translate(" + x(d.date) + "," + y(d.price) + ")");
+	         focus.select(".x--line").attr("transform", "translate(" + x(d.date) + "," + height + ")");
+				      });
 	   .on("mouseover",function() { focus.style("display",null); 
 	         focus.select("text.y3--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
 	              .text(formatTime(d.date));
