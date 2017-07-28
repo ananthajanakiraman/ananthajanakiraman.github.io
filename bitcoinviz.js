@@ -160,7 +160,7 @@
 	              .text("$" + d.price);
                  focus.select(".circle").attr("transform", "translate(" + x(d.date) + "," + y(d.price) + ")");
 	         focus.select(".x--line").attr("transform", "translate(" + x(d.date) + "," + height + ")");
-				      });
+				      })
 	   .on("mouseover",function() { focus.style("display",null); 
 	         focus.select("text.y3--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
 	              .text(formatTime(d.date));
