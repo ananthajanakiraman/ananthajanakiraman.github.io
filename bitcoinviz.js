@@ -151,7 +151,6 @@
 				  .transition()
 				  .duration(1000)
 				  .attr("r", 16)
-			          .ease('sine')
 				  .on("end", repeat);
 			};
        }); 
