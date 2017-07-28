@@ -141,15 +141,17 @@
                                   .attr("fill", "none")
                                   .attr("stroke", "red")
                                   .attr("stroke-width", "2px");
-
-			(function repeat() {
-				maxCircle.transition()
-					.duration(2000)
-					.attr("r", 2)
-					.transition()
-					.duration(1000)
-					.attr("r", 16)
-					.ease('sine')
-					.each("end", repeat);
-			})();
+	       
+                repeat();
+	       
+		function repeat() {
+			 maxCircle.transition()
+				  .duration(2000)
+			          .attr("r", 2)
+				  .transition()
+				  .duration(1000)
+				  .attr("r", 16)
+			          .ease('sine')
+				  .on("end", repeat);
+			};
        }); 
