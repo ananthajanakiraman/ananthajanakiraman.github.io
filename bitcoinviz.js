@@ -230,9 +230,8 @@
 		.attr("x",width/2-100)
 		.attr("y",y(maximum1))
 		.text('Peak: ' + '$' + maximum1)
-	        .style("font-size","18px")
+	        .style("font-size","14px")
 	        .style("font-weight", "bold")
-	        .style("text-decoration", "underline")
-	        .style("font-family","sans-serif")
+	        .style("font-family","Arial")
 
        }); 
