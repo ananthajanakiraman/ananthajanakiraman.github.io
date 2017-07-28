@@ -40,6 +40,15 @@
                     .y(function(d) {
                        return y(d.price);
                      });
+
+        var area = d3.area()
+                    .curve(d3.curveBasis)
+                    .x(function(d) {
+                       return x(d.date);
+                     })
+                    .y(function(d) {
+                       return y(d.price);
+                     });
         
         var svg = d3.select(".chart").append("svg")
                     .attr("width", width + margin.left + margin.right)
@@ -90,6 +99,11 @@
 	      .data([data])
 	      .attr("class", "line")
               .attr("d", line);
+	
+	  svg.append("path")
+	      .data([data])
+	      .attr("class", "area area")
+              .attr("d", area);
 	       
 	   svg.selectAll(".dot")
              .data(data)
