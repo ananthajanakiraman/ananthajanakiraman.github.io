@@ -12,7 +12,8 @@
        height = $(".chart").height() - margin.top - margin.bottom;
         
        var parseDate1 = d3.timeFormat("%Y-%m-%d").parse;
-       var parseDate  = d3.timeParse("%Y-%m-%d");
+       var parseDate  = d3.timeParse("%Y-%m-%d"),
+	   bisectDate = d3.bisector(function(d) { return d.date; }).left;
        var formatTime = d3.timeFormat("%e %B");
 
        var div = d3.select("body").append("div")
@@ -143,21 +144,21 @@
 		.attr("fill","#000")
 		.attr("dx", 8)
 		.attr("dy", "1em");
-	
-	var bisectDate = d3.bisector(function(d) { return d.date; }).left;
 	       
 	svg.append("rect")
 	   .attr("class", "overlay")
 	   .attr("width",width)
 	   .attr("height",height)
+	   .on("mouseover", function() { focus.style("display", null); })
 	   .on("mouseout", function() { focus.style("display","none"); })
-	   .on("mousemove",function() { focus.style("display",null); 
-				       
-		const x0 = x.invert(d3.mouse(this)[0]);
-	        const i = bisectDate(data, x0);
-		const d0 = data[i - 1];
-		const d1 = data[i];
-		const d = x0 - d0.date > d1.date - x0 ? d1 : d0;
+	   .on("mousemove", mousemove); 
+
+	    function mousemove() {
+		var x0 = x.invert(d3.mouse(this)[0]),
+	            i = bisectDate(data, x0, 1),
+		    d0 = data[i - 1],
+		    d1 = data[i],
+		    d = x0 - d0.date > d1.date - x0 ? d1 : d0;
 
 	         console.log(i, d0.date, d1.date);
 				       
@@ -171,7 +172,7 @@
 	              .text("$" + d.price);
                  focus.select(".circle").attr("transform", "translate(" + x(d.date) + "," + y(d.price) + ")");
 	         focus.select(".x--line").attr("transform", "translate(" + x(d.date) + "," + height + ")");
-				      });
+				      }
 	       
         svg.selectAll(".dot")
              .data(data)
