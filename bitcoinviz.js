@@ -145,6 +145,7 @@
 		.attr("dy", "1em");
 	       
 	svg.append("rect")
+	   .attr("class", "overlay")
 	   .attr("width",width)
 	   .attr("height",height)
 	   .on("mouseout", function() { focus.style("display","none"); })
