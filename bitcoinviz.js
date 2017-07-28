@@ -118,8 +118,7 @@
 		.style("stroke-dasharray", "1,1")
 		.style("opacity", 0.8)
 		.attr("y1",-height)
-		.attr("y2",0)
-                .attr("stroke-width", 2);
+		.attr("y2",0);
 
 	   focus.append("text").attr("class", "y--text")
 		.style("stroke", "white")
