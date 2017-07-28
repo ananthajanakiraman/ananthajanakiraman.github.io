@@ -113,12 +113,14 @@
 	     .attr("r", 3);
 	
 	focus.append("line").attr("class", "x--line")
-                         .attr("x1", 5)
-                         .attr("y1", 5)
-                         .attr("x2", 50)
-                         .attr("y2", 50)
-                         .attr("stroke-width", 2)
-                         .attr("stroke", "black");
+ 	        .style("stroke", "#777")
+		.style("shape-rendering", "crispEdges")
+		.style("stroke-dasharray", "1,1")
+		.style("opacity", 0.8)
+		.attr("y1",-height)
+		.attr("y2",0);
+                .attr("stroke-width", 2)
+
 		
 	focus.append("text").attr("class", "y--text")
 		.style("stroke", "white")
