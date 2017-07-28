@@ -148,6 +148,7 @@
 	   .enter().append("rect")
 	   .attr("width",width)
 	   .attr("height",height)
+	   .on("mouseout", function() { focus.style("display","none"); })
 	   .on("mouseover",function() { focus.style("display",null); });
 	       
         svg.selectAll(".dot")
