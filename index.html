@@ -36,6 +36,23 @@
                 </div>
             </header>
 
+            <div class="tabbable">
+            <ul class="nav nav-tabs">
+                <li class="active"><a class="atab" href="#a_tab" data-toggle="tab">A</a></li>
+                <li><a class="btab" href="#b_tab" data-toggle="tab">B</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="a_tab">
+                    <h1>A</h1>
+                    <acontent></acontent>
+                </div>
+                <div class="tab-pane" id="b_tab">
+                    <h1>B</h1>
+                    <bcontent></bcontent>
+                </div>
+            </div>
+            </div>
+            
             <section class="row">
 
             <div class="col-md-12 chart">
@@ -73,30 +90,14 @@
     
     <!-- Our application script -->
     
-         <div class="tabbable">
-            <ul class="nav nav-tabs">
-                <li class="active"><a class="atab" href="#a_tab" data-toggle="tab">A</a></li>
-                <li><a class="btab" href="#b_tab" data-toggle="tab">B</a></li>
-            </ul>
-            <div class="tab-content">
-                <div class="tab-pane active" id="a_tab">
-                    <h1>A</h1>
-                    <acontent></acontent>
-                </div>
-                <div class="tab-pane" id="b_tab">
-                    <h1>B</h1>
-                    <bcontent></bcontent>
-                </div>
-            </div>
-        </div>
-    
         <script>
             $.ajaxSetup ({
                 // Disable caching of AJAX responses
                 // Used when debugging
                 cache: false
             });
-        
+            
+            $.getScript("bitcoinviz.js");        
             $(".atab").click(function() {
                 $.getScript("bitcoinviz.js");
             })
