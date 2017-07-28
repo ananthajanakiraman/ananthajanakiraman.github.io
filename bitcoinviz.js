@@ -144,6 +144,9 @@
 	             .text( parseDate(d.date));
 		focus.select("text.y--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 16) + ")")
 	             .text(d.price);
+                focus.select(".circle").attr("transform", "translate(" + x(d.date) + "," + y(d.price) + ")");
+	        focus.select(".x--line").attr("transform", "translate(" + x(d.date) + "," + (height) + ")");
+	}
 	      })
 	     .on("mouseover", function(d) {
                  div.transition()
