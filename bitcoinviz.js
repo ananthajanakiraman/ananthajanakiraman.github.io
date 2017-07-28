@@ -156,7 +156,7 @@
 	       
 	       	svg.append("text")
 		.attr("class","maxValue")
-		.attr("x",x(maximumObj.date))
+		.attr("x",x(width/2))
 		.attr("y",y(maximumObj.price))
 		.text('Peak: ' + '$' + maximum1)
        }); 
