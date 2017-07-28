@@ -160,4 +160,5 @@
 		.text('Peak: ' + '$' + maximum1)
 	        .style("font-size","14px")
 	        .style("font-weight", "bold")
+	        .style("fill","steelblue")
        }); 
