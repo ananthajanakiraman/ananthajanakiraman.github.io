@@ -111,6 +111,7 @@
               .attr("d", area);
 	       
 	   var focus = svg.append("g")
+	        .attr("display","none")
 		.attr("class", "focus");
 	
 	   focus.append("circle")
