@@ -108,11 +108,11 @@
 	   var focus = svg.append("g")
 		.attr("class", "focus");
 	
-	focus.append("circle")
-	     .attr("class","circle")
-	     .attr("r", 3);
+	   focus.append("circle")
+	        .attr("class","circle")
+	        .attr("r", 3);
 	
-	focus.append("line").attr("class", "x--line")
+	   focus.append("line").attr("class", "x--line")
  	        .style("stroke", "#777")
 		.style("shape-rendering", "crispEdges")
 		.style("stroke-dasharray", "1,1")
@@ -121,8 +121,7 @@
 		.attr("y2",0)
                 .attr("stroke-width", 2);
 
-		
-	focus.append("text").attr("class", "y--text")
+	   focus.append("text").attr("class", "y--text")
 		.style("stroke", "white")
 		.style("stroke-width", "3px")
 		.style("opacity", 0.8)
@@ -140,6 +139,12 @@
                    return y(d.price); 
                  })
              .attr("r", 5)
+	     .on("mousemove", function(d) {
+                focus.select("text.y--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
+	             .text( parseDate(d.date));
+		focus.select("text.y--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 16) + ")")
+	             .text(d.price);
+	      })
 	     .on("mouseover", function(d) {
                  div.transition()
                     .duration(200)
