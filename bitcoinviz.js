@@ -45,7 +45,8 @@
                     .x(function(d) {
                        return x(d.date);
                      })
-                    .y(function(d) {
+	            .y0(height)
+                    .y1(function(d) {
                        return y(d.price);
                      });
         
