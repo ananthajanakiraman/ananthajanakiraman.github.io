@@ -106,6 +106,7 @@
               .attr("d", area);
 	       
 	   var focus = svg.append("g")
+	   	.attr("display","none")
 		.attr("class", "focus");
 	
 	   focus.append("circle")
@@ -144,18 +145,14 @@
 		.attr("dx", 8)
 		.attr("dy", "1em");
 	       
-	   svg.selectAll(".dot")
-             .data(data)
-             .enter().append("circle")
-             .attr("class", "dot")
-             .attr("cx", function(d) {
-                   return x(d.date); 
-                 })
-             .attr("cy", function(d) {
-                   return y(d.price); 
-                 })
-             .attr("r", 5)
-	     .on("mousemove", function(d) {
+	   svg.append("rect")
+	        .data(data)
+		.attr("class", "overlay")
+		.attr("width", width)
+		.attr("height", height)
+		.on("mouseover", function() { focus.style("display", null); })
+		.on("mouseout", function() { focus.style("display", "none"); })
+	        .on("mousemove", function(d) {
                  focus.select("text.y3--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
 	              .text(formatTime(d.date));
 	         focus.select("text.y4--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
@@ -167,8 +164,7 @@
                  focus.select(".circle").attr("transform", "translate(" + x(d.date) + "," + y(d.price) + ")");
 	         focus.select(".x--line").attr("transform", "translate(" + x(d.date) + "," + height + ")");
 	
-	      })
-              .on("mouseout", function() { focus.style("display", "none"); });
+	      });
 	       
                var maximum1 = d3.max(data, function(d) {return d.price;});
  	       var maximumObj = data.filter(function(d) {return d.price == maximum1;})[0];
