@@ -82,58 +82,13 @@
              .style("text-anchor", "end")
              .text("Closing Price (USD)");
 
-	  var exch = svg.selectAll(".exch")
-                          .data(data)
+	  var linedraw = svg.selectAll(".linedraw")
+                          .datum(data)
                           .enter().append("g")
-                          .attr("class", "exch");  
+                          .attr("class", "linedraw");  
           
-          exch.append("path")
-              .attr("class", "line")
-              .attr("d", line)
-              .style("stroke", "lightsteelblue");
-         
-     
-         exch.selectAll(".dot")
-             .data(data)
-             .enter().append("circle")
-             .attr("class", "dot")
-             .attr("cx", function(d) {
-                   return x(d.date); 
-                 })
-             .attr("cy", function(d) {
-                   return y(d.price); 
-                 })
-             .attr("r", 5)
-             .on("mouseover", function(d) {
 
-                var displayDate = formatTime(d.date);
-                var displayVal = "$"+d.price;
-
-                $(".tt").html(
-                "<div class='name'>"+displayDate+"</div>"+
-                "<div class='date'>"+displayDate+": </div>"+
-                "<div class='price'>"+displayVal+"</div>"
-               )
-               
-                $(".tt").show();
-               
-                d3.select(this).style("opacity", 1);
-            
-              })
-             
-             .on("mousemove", function(d) {
-
-               var xPos = d3.mouse(this)[0] + margin.left + 10;
-               var yPos = d3.mouse(this)[1] + margin.top + 10;
-
-               $(".tt").css({
-                  "left": xPos + "px",
-                  "top": yPos + "px"
-               })
-
-             })
-	       
-	  var linedraw = svg.append("path")
+	  linedraw.append("path")
 	      .datum(data)
               .attr("class", "line")
 	      .attr("stroke","#777")
