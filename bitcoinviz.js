@@ -145,6 +145,7 @@
 		.attr("dy", "1em");
 	       
 	svg.append("rect")
+	   .data(data)
 	   .attr("class", "overlay")
 	   .attr("width",width)
 	   .attr("height",height)
