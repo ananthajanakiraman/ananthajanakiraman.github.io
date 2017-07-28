@@ -106,7 +106,6 @@
               .attr("d", area);
 	       
 	   var focus = svg.append("g")
-	        .attr("display","none")
 		.attr("class", "focus");
 	
 	   focus.append("circle")
@@ -146,7 +145,7 @@
 		focus.select("text.y--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 16) + ")")
 	             .text(d.price);
                 focus.select(".circle").attr("transform", "translate(" + x(d.date) + "," + y(d.price) + ")");
-	        focus.select(".x--line").attr("transform", "translate(" + x(d.date) + "," + (height) + ")");
+	        focus.select(".x--line").attr("transform", "translate(" + x(d.date) + "," + height + ")");
 	
 	      })
 	     .on("mouseover", function(d) {
