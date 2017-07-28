@@ -111,7 +111,7 @@
               .attr("d", area);
 	       
 	   var focus = svg.append("g")
-	        .attr("display","none")
+	        .attr("opacity",0)
 		.attr("class", "focus");
 	
 	   focus.append("circle")
@@ -154,7 +154,7 @@
 	   .attr("class", "overlay")
 	   .attr("width",width)
 	   .attr("height",height)
-	   .on("mouseover", function() { focus.style("display", "display"); })
+	   .on("mouseover", function() { focus.style("opacity", 1); })
 	   .on("mouseout", function() { focus.style("display","none"); })
 	   .on("mousemove", mousemove); 
 
