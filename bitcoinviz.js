@@ -158,7 +158,6 @@
 		.attr("x",width/2)
 		.attr("y",y(maximum1))
 		.text('Peak: ' + '$' + maximum1)
-	        .attr("class","shadow")
 	        .style("font-size","18px")
 	        .style("font-weight", "bold")
 
