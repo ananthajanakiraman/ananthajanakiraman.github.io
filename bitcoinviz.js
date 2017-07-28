@@ -130,4 +130,26 @@
                       .style("opacity", 0);
                 });
 	       
+               var maximum1 = d3.max(data, function(d) {return d.price;});
+ 	       var maximumObj = data.filter(function(d) {return d.price == maximum1;})[0];
+	       
+	       var maxCircle = svg.append("circle")
+                                  .attr("class", "maxCircle")
+  	                          .attr("cx", x(maximumObj.date))
+                                  .attr("cy", y(maximumObj.price))
+                                  .attr("r", 10)
+                                  .attr("fill", "none")
+                                  .attr("stroke", "red")
+                                  .attr("stroke-width", "2px");
+
+			(function repeat() {
+				maxCircle.transition()
+					.duration(2000)
+					.attr("r", 2)
+					.transition()
+					.duration(1000)
+					.attr("r", 16)
+					.ease('sine')
+					.each("end", repeat);
+			})();
        }); 
