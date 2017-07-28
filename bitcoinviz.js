@@ -90,7 +90,6 @@
 
 	  linedraw.append("path")
 	      .datum(data)
-              .attr("class", "line")
 	      .attr("stroke","#777")
 	      .attr("stroke-width","1.5px")
               .attr("d", line);
