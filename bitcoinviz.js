@@ -120,12 +120,29 @@
 		.attr("y1",-height)
 		.attr("y2",0);
 
-	   focus.append("text").attr("class", "y--text")
+	   focus.append("text").attr("class", "y1--text")
 		.style("stroke", "white")
 		.style("stroke-width", "3px")
 		.style("opacity", 0.8)
 		.attr("dx", 8)
 		.attr("dy", "0em");
+	       
+	   focus.append("text").attr("class", "y2--text")
+		.attr("fill","#000")
+		.attr("dx", 8)
+		.attr("dy", "0em");
+	
+	focus.append("text").attr("class", "y3--text")
+		.style("stroke", "white")
+		.style("stroke-width", "3px")
+		.style("opacity", 0.8)
+		.attr("dx", 8)
+		.attr("dy", "1em");
+		
+	focus.append("text").attr("class", "y4--text")
+		.attr("fill","#000")
+		.attr("dx", 8)
+		.attr("dy", "1em");
 	       
 	   svg.selectAll(".dot")
              .data(data)
@@ -139,10 +156,14 @@
                  })
              .attr("r", 5)
 	     .on("mousemove", function(d) {
-                focus.select("text.y--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
-	             .text( parseDate(d.date));
-		focus.select("text.y--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 16) + ")")
-	             .text(d.price);
+        focus.select("text.y3--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
+	.text( parseDate(d.date));
+	focus.select("text.y4--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
+	.text( parseDate(d.date));
+	focus.select("text.y1--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 16) + ")")
+	.text(d.price);
+	focus.select("text.y2--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 16) + ")")
+	.text(d.price);
                 focus.select(".circle").attr("transform", "translate(" + x(d.date) + "," + y(d.price) + ")");
 	        focus.select(".x--line").attr("transform", "translate(" + x(d.date) + "," + height + ")");
 	
