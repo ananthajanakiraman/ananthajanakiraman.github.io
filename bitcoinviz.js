@@ -106,7 +106,6 @@
               .attr("d", area);
 	       
 	   var focus = svg.append("g")
-	   	.attr("display","none")
 		.attr("class", "focus");
 	
 	   focus.append("circle")
@@ -150,8 +149,6 @@
 		.attr("class", "overlay")
 		.attr("width", width)
 		.attr("height", height)
-		.on("mouseover", function() { focus.style("display", null); })
-		.on("mouseout", function() { focus.style("display", "none"); })
 	        .on("mousemove", function(d) {
                  focus.select("text.y3--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
 	              .text(formatTime(d.date));
