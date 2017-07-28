@@ -1,7 +1,7 @@
-      !(function (d3) {
+      $(document).ready(function() {
+         console.log("Hello world.")
+        });
 
-      $("acontent").empty();
- 
        var margin = {
          top: 20,
          right: 80,
@@ -237,5 +237,3 @@
 	        .style("font-family","Arial")
 
        }); 
-	      
-      });
