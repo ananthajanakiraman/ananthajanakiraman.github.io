@@ -188,7 +188,6 @@
                    return y(d.price); 
                  })
              .attr("r", 5)
-	        .on("mouseout", function() { focus.style("display","none"); })
 	        .on("mouseover", function() {focus.style("opacity",1);})
 	        .on("mousemove", function(d) {
                  focus.select("text.y3--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
