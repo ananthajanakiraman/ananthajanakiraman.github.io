@@ -42,7 +42,6 @@
                      });
 
         var area = d3.area()
-                    .curve(d3.curveBasis)
                     .x(function(d) {
                        return x(d.date);
                      })
@@ -101,8 +100,8 @@
               .attr("d", line);
 	
 	  svg.append("path")
-	      .data([data])
-	      .attr("class", "area area")
+	      .data(data)
+	      .attr("class", "area")
               .attr("d", area);
 	       
 	   svg.selectAll(".dot")
