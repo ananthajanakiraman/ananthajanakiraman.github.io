@@ -35,10 +35,8 @@ body {
     fill: steelblue;
 }
 
-text.shadow {
-  stroke: white;
-  stroke-width: 4px;
-  opacity: 0.8;
+text {
+  font: 10px sans-serif;
 }
 
 /* Tooltip styles below */
