@@ -158,5 +158,5 @@
 		.attr("class","maxValue")
 		.attr("x",x(maximumObj.date)-10)
 		.attr("y",y(maximumObj.price))
-		.text('Peak: ' + formatChange(maximum1))
+		.text('Peak: ' + maximum1)
        }); 
