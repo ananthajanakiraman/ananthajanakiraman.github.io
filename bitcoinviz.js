@@ -158,4 +158,5 @@
 		.attr("x",width/2)
 		.attr("y",y(maximum1))
 		.text('Peak: ' + '$' + maximum1)
+	        .style("font-size",14px)
        }); 
