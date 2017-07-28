@@ -45,7 +45,6 @@
                     .x(function(d) {
                        return x(d.date);
                      })
-	             .y0(height)
                     .y1(function(d) {
                        return y(d.price);
                      });
@@ -76,6 +75,7 @@
                 0,
 		d3.max(data, function(d) {return d.price;})
           ]);
+	area.y0(y(0));
         
 	svg.append("g")
              .attr("class", "x axis")
@@ -101,8 +101,8 @@
               .attr("d", line);
 	
 	  svg.append("path")
-	      .data(data)
-	      .attr("class", "area area")
+	      .datum(data)
+	      .attr("fill","steelblue")
               .attr("d", area);
 	       
 	   svg.selectAll(".dot")
