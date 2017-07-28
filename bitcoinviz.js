@@ -13,7 +13,7 @@
         
        var parseDate1 = d3.timeFormat("%Y-%m-%d").parse;
        var parseDate  = d3.timeParse("%Y-%m-%d"),
-	   bisectDate = d3.bisector(function(d) { return d.date; }).left;
+	   bisectDate = d3.bisector(function(d) { return d.date; }).right;
        var formatTime = d3.timeFormat("%e %B");
 
        var div = d3.select("body").append("div")
@@ -155,7 +155,7 @@
 
 	    function mousemove() {
 		var x0 = x.invert(d3.mouse(this)[0]),
-	            i = bisectDate(data, x0, 1),
+	            i = bisectDate(data, x0),
 		    d0 = data[i - 1],
 		    d1 = data[i],
 		    d = x0 - d0.date > d1.date - x0 ? d1 : d0;
