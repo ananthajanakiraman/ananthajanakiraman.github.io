@@ -12,8 +12,8 @@
          bottom: 30,
          left: 50
        },
-       width = $("acontent").width() - margin.left - margin.right,
-       height = $("acontent").height() - margin.top - margin.bottom;
+       width = $(".chart").width() - margin.left - margin.right,
+       height = $(".chart").height() - margin.top - margin.bottom;
         
        var parseDate1 = d3.timeFormat("%Y-%m-%d").parse;
        var parseDate  = d3.timeParse("%Y-%m-%d"),
@@ -54,7 +54,7 @@
                        return y(d.price);
                      });
         
-        var svg = d3.select("acontent").append("svg")
+        var svg = d3.select(".chart").append("svg")
                     .attr("width", width + margin.left + margin.right)
                     .attr("height", height + margin.top + margin.bottom)
                     .append("g")
