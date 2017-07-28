@@ -144,8 +144,7 @@
 		.attr("dx", 8)
 		.attr("dy", "1em");
 	       
-	svg.selectAll("rect")
-	   .enter().append("rect")
+	svg.append("rect")
 	   .attr("width",width)
 	   .attr("height",height)
 	   .on("mouseout", function() { focus.style("display","none"); })
