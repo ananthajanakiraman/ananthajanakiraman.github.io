@@ -1,6 +1,6 @@
       !(function (d3) {
 
-      $("acontent").empty();
+      $("bcontent").empty();
  
        var margin = {
          top: 20,
