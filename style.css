@@ -39,6 +39,11 @@ text {
   font: 10px sans-serif;
 }
 
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
 /* Tooltip styles below */
 
 .chart {
