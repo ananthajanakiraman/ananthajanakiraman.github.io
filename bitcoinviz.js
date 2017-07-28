@@ -163,7 +163,7 @@
 	         focus.select("text.y1--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 16) + ")")
 	              .text("$" + d.price);
 	         focus.select("text.y2--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 16) + ")")
-	              .text(d.price);
+	              .text("$" + d.price);
                  focus.select(".circle").attr("transform", "translate(" + x(d.date) + "," + y(d.price) + ")");
 	         focus.select(".x--line").attr("transform", "translate(" + x(d.date) + "," + height + ")");
 	
