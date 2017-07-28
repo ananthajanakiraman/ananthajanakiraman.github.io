@@ -102,7 +102,7 @@
 	
 	  svg.append("path")
 	      .datum(data)
-	      .attr("fill","steelblue")
+	      .attr("fill","lightsteelblue")
               .attr("d", area);
 	       
 	   svg.selectAll(".dot")
