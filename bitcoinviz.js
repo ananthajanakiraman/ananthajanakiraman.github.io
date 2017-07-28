@@ -145,12 +145,13 @@
 		.attr("dy", "1em");
 	       
 	svg.append("rect")
-	   .data(data)
 	   .attr("class", "overlay")
 	   .attr("width",width)
 	   .attr("height",height)
 	   .on("mouseout", function() { focus.style("display","none"); })
 	   .on("mousemove",function() { focus.style("display",null); 
+				       var x0 = x.d3.mouse(this)[0]
+				       console.log(x0)
 	         focus.select("text.y3--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
 	              .text(formatTime(d.date));
 	         focus.select("text.y4--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
