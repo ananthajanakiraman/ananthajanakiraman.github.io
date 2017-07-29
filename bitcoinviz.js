@@ -247,6 +247,7 @@
 	       d3.selectAll('input[name="BTHY"]').on("change", change);
 	
 	       function change() {
+		console.log("inside change");
 		svg.transition().duration(900).delay(500);       
 	       }
 
