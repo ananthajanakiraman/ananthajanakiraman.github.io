@@ -6,6 +6,8 @@
          console.log("Hello world.")
         });
 
+	var val = "5YR";
+	      
         d3.selectAll("input").on("change", change);
 	
 	function change() {
@@ -20,7 +22,6 @@
        },
        width = 1140 - margin.left - margin.right,
        height = 520 - margin.top - margin.bottom;
-       console.log(width,height);
 	      
        var parseDate1 = d3.timeFormat("%Y-%m-%d").parse;
        var parseDate  = d3.timeParse("%Y-%m-%d"),
@@ -71,7 +72,7 @@
             "BITCOIN"  : "Bitcoin"
         }
         
-       d3.tsv("databit.tsv", function(error, data) {
+       d3.tsv("databit5YR.tsv", function(error, data) {
              if (error) throw error; 
             
              data.forEach(function(d) {
