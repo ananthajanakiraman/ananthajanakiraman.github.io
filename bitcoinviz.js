@@ -12,8 +12,8 @@
          bottom: 30,
          left: 50
        },
-       width = 1010 - margin.left - margin.right,
-       height = 450 - margin.top - margin.bottom;
+       width = 1140 - margin.left - margin.right,
+       height = 520 - margin.top - margin.bottom;
        console.log(width,height);
 	      
        var parseDate1 = d3.timeFormat("%Y-%m-%d").parse;
