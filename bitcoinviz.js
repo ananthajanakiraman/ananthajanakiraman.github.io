@@ -6,6 +6,8 @@
          console.log("Hello world.")
         });
 
+	var val = "5YR";
+	      
         d3.selectAll("input").on("change", change);
 	
 	function change() {
@@ -70,7 +72,7 @@
             "BITCOIN"  : "Bitcoin"
         }
         
-       d3.tsv("databit" + val + ".tsv", function(error, data) {
+       d3.tsv("databit"+val+".tsv", function(error, data) {
              if (error) throw error; 
             
              data.forEach(function(d) {
