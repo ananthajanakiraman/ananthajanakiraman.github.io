@@ -7,7 +7,7 @@
         });
 
 	val = d3.select('input[name="BTHY"]:checked')[0][0].value;
-        console.log(val);}
+        console.log(val);
 	      
        var margin = {
          top: 20,
