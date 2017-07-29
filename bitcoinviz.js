@@ -6,6 +6,10 @@
          console.log("Hello world.")
         });
 
+       var fileval = d3.select("input[value=\"5YR\"]").property("checked", true) ? "fyr" : "oyr" ;
+	      
+       console.log(fileval);
+	      
        var margin = {
          top: 20,
          right: 80,
