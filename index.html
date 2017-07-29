@@ -51,10 +51,10 @@
                     
                     <br>
                     <form>
-                          <label><input type="radio" name="year" value="5YR" checked> 5 Years</label>
-                          <label><input type="radio" name="year" value="3YR"> 3 Years</label>
-                          <label><input type="radio" name="year" value="1YR"> 1 Year</label>
-                          <label><input type="radio" name="year" value="1MO"> 1 Month</label>
+                          <label><input type="radio" name="BTHY" value="5YR" checked> 5 Years</label>
+                          <label><input type="radio" name="BTHY" value="3YR"> 3 Years</label>
+                          <label><input type="radio" name="BTHY" value="1YR"> 1 Year</label>
+                          <label><input type="radio" name="BTHY" value="1MO"> 1 Month</label>
                     </form>
                     <acontent></acontent>
                 </div>
@@ -130,7 +130,7 @@
             $(".atab").click(function() {
                 $.getScript("bitcoinviz.js");
             })
-            $("input[type=radio]").on("change", function (e) {
+            $('input[name="BTHY"]').on("change", function (e) {
                console.log("I am changing");
            })
         </script>
