@@ -22,6 +22,18 @@ body {
   stroke-width: 1.5px;
 }
 
+.lineeth {
+  fill: none;
+  stroke: darkOrange;
+  stroke-width: 1.5px;
+}
+
+.linelit {
+  fill: none;
+  stroke: steelgreen;
+  stroke-width: 1.5px;
+}
+
 .chart {
   height: 500px;
   position: relative;
