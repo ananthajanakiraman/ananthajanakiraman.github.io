@@ -260,6 +260,25 @@
                             return a1.date1 - b1.date1;
                             });     
 			       
+			    var line = d3.line()
+                           .curve(d3.curveBasis)
+                           .x(function(d1) {
+                              return x(d1.date1);
+                            })
+                           .y(function(d1) {
+                              return y(d1.price1);
+                           });
+
+                           var area = d3.area()
+                          .x(function(d1) {
+                              return x(d1.date1);
+                           })
+                          .y1(function(d1) {
+                             return y(d1.price1);
+                           });
+			   
+			   svg.transition().duration(1000).select(".line").attr("class","line");
+			   
 		           console.log(d3.extent(data1, function(d) { return d.date1;}));
 		       });
 	            }
