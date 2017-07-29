@@ -6,13 +6,11 @@
          console.log("Hello world.")
         });
 
-       var value = "5YR";
-	      
-       $("input[type=radio]").on("change", function (e) {
-          var value = $(e.target).val();
-       });
-	      
-       console.log(value);
+        d3.selectAll("input").on("change", change);
+	
+	function change() {
+	val = this.value;
+        console.log(val);}
 	      
        var margin = {
          top: 20,
