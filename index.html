@@ -61,20 +61,20 @@
                 <div class="tab-pane" id="b_tab">
                     <br>
                     <form>
-                          <label><input type="radio" name="year" value="5YR" checked> 5 Years</label>
-                          <label><input type="radio" name="year" value="3YR"> 3 Years</label>                        
-                          <label><input type="radio" name="year" value="1YR"> 1 Year</label>
-                          <label><input type="radio" name="year" value="1MO"> 1 Month</label>
+                          <label><input type="radio" name="ETHY" value="5YR" checked> 5 Years</label>
+                          <label><input type="radio" name="ETHY" value="3YR"> 3 Years</label>                        
+                          <label><input type="radio" name="ETHY" value="1YR"> 1 Year</label>
+                          <label><input type="radio" name="ETHY" value="1MO"> 1 Month</label>
                     </form>
                     <bcontent></bcontent>
                 </div>
                 <div class="tab-pane" id="c_tab">
                     <br>
                     <form>
-                          <label><input type="radio" name="year" value="5YR" checked> 5 Years </label>
-                          <label><input type="radio" name="year" value="3YR"> 3 Years</label> 
-                          <label><input type="radio" name="year" value="1YR"> 1 Year</label>
-                          <label><input type="radio" name="year" value="1MO"> 1 Month</label>          
+                          <label><input type="radio" name="LITY" value="5YR" checked> 5 Years </label>
+                          <label><input type="radio" name="LITY" value="3YR"> 3 Years</label> 
+                          <label><input type="radio" name="LITY" value="1YR"> 1 Year</label>
+                          <label><input type="radio" name="LITY" value="1MO"> 1 Month</label>          
                     </form>
                     <ccontent></ccontent>
                 </div>
@@ -139,12 +139,18 @@
             $(".btab").click(function() {
                 $.getScript("ethcoinviz.js");
             })
+            $('input[name="ETHY"]').on("change", function (e) {
+               $.getScript("ethcoinviz.js");
+           })            
         </script>
         <script>
             
             $(".ctab").click(function() {
                 $.getScript("lthcoinviz.js");
             })
+            $('input[name="LITY"]').on("change", function (e) {
+               $.getScript("lthcoinviz.js");
+           })            
         </script>    
     <!--<script src="bitcoinviz.js" charset="utf-8"></script>-->
    
