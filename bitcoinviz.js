@@ -246,9 +246,14 @@
 	       
 	       d3.selectAll('input[name="BTHY"]').on("change", change);
 	
-	       function change() {
-		console.log("inside change");
-		svg.transition().duration(900).delay(500);       
+	       function change(data) {
+		       
+		console.log(d3.extent(data, function(d) { return d.date;}));
+                d3.selectAll("svg").each(function(d, i){  
+		svg = d3.select(this);
+                xScale = d3.scale.linear().domain(d3.extent(data, function(d) { return d.date;})).nice();
+			
+		}
 	       }
 
        }); 
