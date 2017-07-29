@@ -6,7 +6,7 @@
          console.log("Hello world.")
         });
 
-	val = d3.select('input[name="BTHY"]:checked')[0][0].value;
+	var val = d3.select('input[name="BTHY"]:checked').node().value;
         console.log(val);
 	      
        var margin = {
