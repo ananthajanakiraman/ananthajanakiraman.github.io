@@ -6,9 +6,13 @@
          console.log("Hello world.")
         });
 
-       var fileval = d3.select("input[value=\"5YR\"]").property("checked", true) ? "fyr" : "oyr" ;
+       var value = "5YR";
 	      
-       console.log(fileval);
+       $("input[type=radio]").on("change", function (e) {
+          var value = $(e.target).val();
+       });
+	      
+       console.log(value);
 	      
        var margin = {
          top: 20,
