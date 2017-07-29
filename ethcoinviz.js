@@ -61,15 +61,15 @@
                     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
         
         var labels = {
-            "BITCOIN"  : "Bitcoin"
+            "ETHEREUM"  : "Ethereum"
         }
         
-       d3.tsv("databit.tsv", function(error, data) {
+       d3.tsv("dataeth.tsv", function(error, data) {
              if (error) throw error; 
             
              data.forEach(function(d) {
                   d.date = parseDate(d.Date);
-		  d.price = +d.BITCOIN;
+		  d.price = +d.ETHEREUM;
            });
 
          data.sort(function(a, b) {
