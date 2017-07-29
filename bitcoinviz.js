@@ -75,6 +75,7 @@
        d3.tsv("databit"+val+".tsv", function(error, data) {
              if (error) throw error; 
             
+	     console.log("databit"+val+".tsv");
              data.forEach(function(d) {
                   d.date = parseDate(d.Date);
 		  d.price = +d.BITCOIN;
