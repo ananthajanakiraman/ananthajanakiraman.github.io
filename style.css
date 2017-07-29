@@ -50,6 +50,8 @@ text {
   stroke-width:2px;
 }
 
+label {display:block; text-align:right; font-size:12px;}
+
 /* Tooltip styles below */
 
 .chart {
