@@ -6,6 +6,9 @@
          console.log("Hello world.")
         });
 
+      var val = d3.select('input[name="ETHY"]:checked').node().value;
+        console.log(val);
+
        var margin = {
          top: 20,
          right: 80,
@@ -64,7 +67,7 @@
             "ETHEREUM"  : "Ethereum"
         }
         
-       d3.tsv("dataeth.tsv", function(error, data) {
+       d3.tsv("dataeth"+val+".tsv", function(error, data) {
              if (error) throw error; 
             
              data.forEach(function(d) {
