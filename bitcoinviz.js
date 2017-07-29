@@ -259,8 +259,9 @@
                             data1.sort(function(a1, b1) {
                             return a1.date1 - b1.date1;
                             });     
+			       
 		           console.log(d3.extent(data1, function(d) { return d.date1;}));
-   
+		       });
 	            }
 
        }); 
