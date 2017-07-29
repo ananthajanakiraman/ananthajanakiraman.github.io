@@ -6,12 +6,7 @@
          console.log("Hello world.")
         });
 
-	var val = "5YR";
-	      
-        d3.selectAll("input").on("change", change);
-	
-	function change() {
-	val = this.value;
+	val = d3.select('input[name="BTHY"]:checked')[0][0].value;
         console.log(val);}
 	      
        var margin = {
