@@ -7,7 +7,6 @@
         });
 
 	var val = d3.select('input[name="BTHY"]:checked').node().value;
-        console.log(val);
 	      
        var margin = {
          top: 20,
@@ -243,6 +242,13 @@
 	        .style("font-size","14px")
 	        .style("font-weight", "bold")
 	        .style("font-family","Arial")
+	       
+	       
+	       d3.selectAll('input[name="BTHY"]').on("change", change);
+	
+	       function change() {
+		svg.transition().duration(600);       
+	       }
 
        }); 
 	      
