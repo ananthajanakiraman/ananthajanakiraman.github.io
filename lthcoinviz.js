@@ -5,6 +5,9 @@
     $(document).ready(function() {
          console.log("Hello world.")
         });
+	    
+        var val = d3.select('input[name="LITY"]:checked').node().value;
+        console.log(val);
 
        var margin = {
          top: 20,
@@ -64,7 +67,7 @@
             "LITECOIN"  : "Litecoin"
         }
         
-       d3.tsv("datalit.tsv", function(error, data) {
+       d3.tsv("datalit"+val+".tsv", function(error, data) {
              if (error) throw error; 
             
              data.forEach(function(d) {
