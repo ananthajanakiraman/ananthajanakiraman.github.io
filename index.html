@@ -39,8 +39,9 @@
                 
             <div class="tabbable">
             <ul class="nav nav-tabs">
-                <li class="active"><a class="atab" href="#a_tab" data-toggle="tab">Bitcoin(BTH)</a></li>
-                <li><a class="btab" href="#b_tab" data-toggle="tab">Ethereum(ETH)</a></li>
+                <li class="active"><a class="atab" href="#a_tab" data-toggle="tab">Bitcoin (BTH)</a></li>
+                <li><a class="btab" href="#b_tab" data-toggle="tab">Ethereum (ETH)</a></li>
+                <li><a class="ctab" href="#c_tab" data-toggle="tab">Litecoin (LTH)</a></li>
             </ul>
             <div class="tab-content">
                 <div class="tab-pane active" id="a_tab">
@@ -48,6 +49,9 @@
                 </div>
                 <div class="tab-pane" id="b_tab">
                     <bcontent></bcontent>
+                </div>
+                <div class="tab-pane" id="c_tab">
+                    <ccontent></ccontent>
                 </div>
             </div>
             </div>
@@ -108,7 +112,12 @@
                 $.getScript("ethcoinviz.js");
             })
         </script>
-    
+        <script>
+            
+            $(".ctab").click(function() {
+                $.getScript("lthcoinviz.js");
+            })
+        </script>    
     <!--<script src="bitcoinviz.js" charset="utf-8"></script>-->
    
 </body>
