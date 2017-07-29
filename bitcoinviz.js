@@ -249,9 +249,7 @@
 	       function change(data) {
 		       
 		console.log(d3.extent(data, function(d) { return d.date;}));
-                d3.selectAll("svg").each(function(d, i){  
-		svg = d3.select(this);
-                xScale = d3.scaleLinear().domain(d3.extent(data, function(d) { return d.date;})).nice();
+   
 			
 		}
 	       }
