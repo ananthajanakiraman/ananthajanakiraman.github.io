@@ -69,7 +69,6 @@
        d3.tsv("databit"+val+".tsv", function(error, data) {
              if (error) throw error; 
             
-	     console.log("databit"+val+".tsv");
              data.forEach(function(d) {
                   d.date = parseDate(d.Date);
 		  d.price = +d.BITCOIN;
@@ -247,11 +246,21 @@
 	       d3.selectAll('input[name="BTHY"]').on("change", change);
 	
 	       function change() {
-		       
-		console.log(d3.extent(data, function(d) { return d.date;}));
+		       var val1 = d3.select('input[name="BTHY"]:checked').node().value;
+		       d3.tsv("databit"+val1+".tsv", function(error, data1) {
+                             if (error) throw error; 
+            
+                            data1.forEach(function(d) {
+                            d.date1 = parseDate(d.Date);
+		            d.price1 = +d.BITCOIN;
+                            });
+
+                            data1.sort(function(a, b) {
+                            return a.date1 - b.date1;
+                            });     
+		           console.log(d3.extent(data1, function(d) { return d.date1;}));
    
-	       }
+	            }
 
        }); 
-	      
       })(d3);
