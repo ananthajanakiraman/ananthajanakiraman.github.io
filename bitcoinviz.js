@@ -247,11 +247,12 @@
 	
 	       function change() {
 		       var val1 = d3.select('input[name="BTHY"]:checked').node().value;
+		       var parseDate2  = d3.timeParse("%Y-%m-%d")
 		       d3.tsv("databit"+val1+".tsv", function(error, data1) {
                              if (error) throw error; 
             
                             data1.forEach(function(d1) {
-                            d1.date1 = parseDate(d1.Date);
+                            d1.date1 = parseDate2(d1.Date);
 		            d1.price1 = +d1.BITCOIN;
                             });
 
