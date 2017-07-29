@@ -246,7 +246,7 @@
 	       
 	       d3.selectAll('input[name="BTHY"]').on("change", change);
 	
-	       function change(data) {
+	       function change() {
 		       
 		console.log(d3.extent(data, function(d) { return d.date;}));
    
