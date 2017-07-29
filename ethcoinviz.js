@@ -117,15 +117,15 @@
 	      .attr("fill","bisque")
               .attr("d", area);
 	       
-	   var focus = svg.append("g")
+	   var focus1 = svg.append("g")
 	        .attr("opacity",0)
-		.attr("class", "focus");
+		.attr("class", "focus1");
 	
-	   focus.append("circle")
+	   focus1.append("circle")
 	        .attr("class","circle")
 	        .attr("r", 3);
 	
-	   focus.append("line").attr("class", "x--line")
+	   focus1.append("line").attr("class", "x--line")
  	        .style("stroke", "#777")
 		.style("shape-rendering", "crispEdges")
 		.style("stroke-dasharray", "1,1")
@@ -133,26 +133,26 @@
 		.attr("y1",-height)
 		.attr("y2",0);
 
-	   focus.append("text").attr("class", "y1--text")
+	   focus1.append("text").attr("class", "y1--text")
 		.style("stroke", "white")
 		.style("stroke-width", "3px")
 		.style("opacity", 0.8)
 		.attr("dx", 8)
 		.attr("dy", "0em");
 	       
-	   focus.append("text").attr("class", "y2--text")
+	   focus1.append("text").attr("class", "y2--text")
 		.attr("fill","#000")
 		.attr("dx", 8)
 		.attr("dy", "0em");
 	
-	focus.append("text").attr("class", "y3--text")
+	focus1.append("text").attr("class", "y3--text")
 		.style("stroke", "white")
 		.style("stroke-width", "3px")
 		.style("opacity", 0.8)
 		.attr("dx", 8)
 		.attr("dy", "1em");
 		
-	focus.append("text").attr("class", "y4--text")
+	focus1.append("text").attr("class", "y4--text")
 		.attr("fill","#000")
 		.attr("dx", 8)
 		.attr("dy", "1em");
@@ -161,8 +161,8 @@
 	   .attr("class", "overlay")
 	   .attr("width",width)
 	   .attr("height",height)
-	   .on("mouseover", function() { focus.style("opacity", 1); })
-	   .on("mouseout", function() { focus.style("display","none"); })
+	   .on("mouseover", function() { focus1.style("opacity", 1); })
+	   .on("mouseout", function() { focus1.style("display","none"); })
 	   .on("mousemove", mousemove); 
 
 	    function mousemove() {
@@ -171,17 +171,17 @@
 		    d0 = data[i - 1],
 		    d1 = data[i],
 		    d = x0 - d0.date > d1.date - x0 ? d1 : d0;
-		focus.style("display", null);
-	         focus.select("text.y3--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
+		focus1.style("display", null);
+	         focus1.select("text.y3--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
 	              .text(formatTime(d.date));
-	         focus.select("text.y4--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
+	         focus1.select("text.y4--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
 	              .text(formatTime(d.date));
-	         focus.select("text.y1--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 16) + ")")
+	         focus1.select("text.y1--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 16) + ")")
 	              .text("$" + d.price);
-	         focus.select("text.y2--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 16) + ")")
+	         focus1.select("text.y2--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 16) + ")")
 	              .text("$" + d.price);
-                 focus.select(".circle").attr("transform", "translate(" + x(d.date) + "," + y(d.price) + ")");
-	         focus.select(".x--line").attr("transform", "translate(" + x(d.date) + "," + height + ")");
+                 focus1.select(".circle").attr("transform", "translate(" + x(d.date) + "," + y(d.price) + ")");
+	         focus1.select(".x--line").attr("transform", "translate(" + x(d.date) + "," + height + ")");
 				      }
 	       
         svg.selectAll(".dot")
@@ -195,19 +195,19 @@
                    return y(d.price); 
                  })
              .attr("r", 5)
-	        .on("mouseover", function() {focus.style("display", null);})
+	        .on("mouseover", function() {focus1.style("display", null);})
 	        .on("mousemove", function(d) {
-		 focus.style("display", null);
-                 focus.select("text.y3--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
+		 focus1.style("display", null);
+                 focus1.select("text.y3--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
 	              .text(formatTime(d.date));
-	         focus.select("text.y4--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
+	         focus1.select("text.y4--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 6) + ")")
 	              .text(formatTime(d.date));
-	         focus.select("text.y1--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 16) + ")")
+	         focus1.select("text.y1--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 16) + ")")
 	              .text("$" + d.price);
-	         focus.select("text.y2--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 16) + ")")
+	         focus1.select("text.y2--text").attr("transform", "translate(" + x(d.date) + "," + (height/2 - 16) + ")")
 	              .text("$" + d.price);
-                 focus.select(".circle").attr("transform", "translate(" + x(d.date) + "," + y(d.price) + ")");
-	         focus.select(".x--line").attr("transform", "translate(" + x(d.date) + "," + height + ")");
+                 focus1.select(".circle").attr("transform", "translate(" + x(d.date) + "," + y(d.price) + ")");
+	         focus1.select(".x--line").attr("transform", "translate(" + x(d.date) + "," + height + ")");
 	
 	      });
 	       
