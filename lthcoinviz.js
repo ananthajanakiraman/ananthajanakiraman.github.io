@@ -1,6 +1,6 @@
     !(function (d3) {
 
-    $("bcontent").empty();
+    $("ccontent").empty();
 	    
     $(document).ready(function() {
          console.log("Hello world.")
@@ -54,7 +54,7 @@
                        return y(d.price);
                      });
         
-        var svg = d3.select("bcontent").append("svg")
+        var svg = d3.select("ccontent").append("svg")
                     .attr("width", width + margin.left + margin.right)
                     .attr("height", height + margin.top + margin.bottom)
                     .append("g")
