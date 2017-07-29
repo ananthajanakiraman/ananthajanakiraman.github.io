@@ -72,7 +72,7 @@
             "BITCOIN"  : "Bitcoin"
         }
         
-       d3.tsv("databit.tsv", function(error, data) {
+       d3.tsv("databit5YR.tsv", function(error, data) {
              if (error) throw error; 
             
              data.forEach(function(d) {
