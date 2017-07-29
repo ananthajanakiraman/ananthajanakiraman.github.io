@@ -250,8 +250,6 @@
 		       
 		console.log(d3.extent(data, function(d) { return d.date;}));
    
-			
-		}
 	       }
 
        }); 
