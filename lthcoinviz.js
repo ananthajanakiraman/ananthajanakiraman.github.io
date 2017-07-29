@@ -61,15 +61,15 @@
                     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
         
         var labels = {
-            "BITCOIN"  : "Bitcoin"
+            "LITECOIN"  : "Litecoin"
         }
         
-       d3.tsv("databit.tsv", function(error, data) {
+       d3.tsv("datalit.tsv", function(error, data) {
              if (error) throw error; 
             
              data.forEach(function(d) {
                   d.date = parseDate(d.Date);
-		  d.price = +d.BITCOIN;
+		  d.price = +d.LITECOIN;
            });
 
          data.sort(function(a, b) {
