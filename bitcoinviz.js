@@ -250,13 +250,13 @@
 		       d3.tsv("databit"+val1+".tsv", function(error, data1) {
                              if (error) throw error; 
             
-                            data1.forEach(function(d) {
-                            d.date1 = parseDate(d.Date);
-		            d.price1 = +d.BITCOIN;
+                            data1.forEach(function(d1) {
+                            d1.date1 = parseDate(d1.Date);
+		            d1.price1 = +d1.BITCOIN;
                             });
 
-                            data1.sort(function(a, b) {
-                            return a.date1 - b.date1;
+                            data1.sort(function(a1, b1) {
+                            return a1.date1 - b1.date1;
                             });     
 		           console.log(d3.extent(data1, function(d) { return d.date1;}));
    
