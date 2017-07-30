@@ -272,8 +272,8 @@
 	       	svg.append("text")
 		.attr("x",width/2-100)
 		.attr("y",y(maximum1))
-		.text('-Peak: ' + '$' + maximum1)
-	        .style("font-size","13px")
+		.text('--Peak: ' + '$' + maximum1)
+	        .style("font-size","12px")
 	        .style("font-weight", "regular")
 	        .style("font-family","sans-serif")
 	       
@@ -281,8 +281,8 @@
 	       	svg.append("text")
 		.attr("x",width/2+10)
 		.attr("y",y(maximum1))
-		.text('-Lowest: ' + '$' + minimum1)
-	        .style("font-size","13px")
+		.text('--Lowest: ' + '$' + minimum1)
+	        .style("font-size","12px")
 	        .style("font-weight", "regular")
 	        .style("font-family","sans-serif")
 	       
