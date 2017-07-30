@@ -282,7 +282,6 @@
 		.attr("y",y(0))
 		.text('Lowest: ' + '$' + minimum1)
 	        .attr("fill","white")
-	        .attr("stroke","black")
 	        .style("font-size","13px")
 	        .style("font-weight", "regular")
 	        .style("font-family","sans-serif")
