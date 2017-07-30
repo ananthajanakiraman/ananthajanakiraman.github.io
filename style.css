@@ -2,6 +2,24 @@ body {
   font: 10px sans-serif;
 }
 
+.axis15 path,
+.axis15 line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+.y15.axis15 .tick:not(.tick--one) line {
+  stroke-opacity: .2;
+}
+.y15.axis15 path {
+  display: none;
+}
+.y15.axis15 line {
+}
+.line15 {
+  fill: none;
+}
+
 .axis path,
 
 .axis line {
