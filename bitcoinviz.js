@@ -268,7 +268,9 @@
 		d3.max(data, function(d) {return d.price;})
           ]);
 	area.y0(y(0));
+		       
 		       pla.transition().attr("fill","orange").duration(2500).delay(500);
+		       });
 	       }
 
        }); 
