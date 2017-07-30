@@ -244,9 +244,7 @@
                                   .attr("cy", y(minimumObj.price))
                                   .attr("r", 10)
                                   .attr("fill", "none")
-                                  .attr("stroke", function (d) { if (d.price <= 0) {return "none"}
-								 else {return "darkOrange"};
-							       })
+                                  .attr("stroke", "darkOrange")
                                   .attr("stroke-width", "2px");
 	       
 
