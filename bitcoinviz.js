@@ -266,7 +266,9 @@
 	                    area.y0(y(1));
 		       
 		           var t1 = svg.transition().duration(600);
+		           t1.selectAll(".line15").attr("d", line);
                            t1.selectAll(".area").attr("d",area);
+		           t1.selectAll(".y15.axis15").call(yAxis);
 		           console.log(d3.extent(data, function(d) { return d.date;}));
 		    
 	            }
