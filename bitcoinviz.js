@@ -281,10 +281,10 @@
 		.attr("x",width/2-100)
 		.attr("y",y(0))
 		.text('Lowest: ' + '$' + minimum1)
-	        .attr("fill","white")
-	        .style("stroke","black")
+		.style("stroke", "white")
+		.style("stroke-width", "3px")
+		.style("opacity", 0.8)
 	        .style("font-size","13px")
-	        .style("font-weight", "regular")
 	        .style("font-family","sans-serif")
 	       
 
