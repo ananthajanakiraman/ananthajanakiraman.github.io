@@ -133,6 +133,14 @@
 		.style("opacity", 0.8)
 		.attr("y1",-height)
 		.attr("y2",0);
+	       
+	  focus1.append("line").attr("class", "y--line")
+	        .style("stroke", "#777")
+		.style("shape-rendering", "crispEdges")
+		.style("stroke-dasharray", "1,1")
+		.style("opacity", 0.8)
+		.attr("x1",-width)
+		.attr("x2",0);
 
 	   focus1.append("text").attr("class", "y1--text")
 		.style("stroke", "white")
@@ -183,6 +191,7 @@
 	              .text("$" + d.price);
                  focus1.select(".circle").attr("transform", "translate(" + x(d.date) + "," + y(d.price) + ")");
 	         focus1.select(".x--line").attr("transform", "translate(" + x(d.date) + "," + height + ")");
+	         focus1.select(".y--line").attr("transform", "translate(" + width + "," + y(d.price) + ")");		   
 				      }
 	       
         svg.selectAll(".dot")
@@ -209,6 +218,7 @@
 	              .text("$" + d.price);
                  focus1.select(".circle").attr("transform", "translate(" + x(d.date) + "," + y(d.price) + ")");
 	         focus1.select(".x--line").attr("transform", "translate(" + x(d.date) + "," + height + ")");
+	         focus1.select(".y--line").attr("transform", "translate(" + width + "," + y(d.price) + ")");		
 	
 	      });
 	       
