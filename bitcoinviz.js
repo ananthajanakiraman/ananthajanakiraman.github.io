@@ -263,7 +263,7 @@
 		               .attr("height", height - y(1));
 	                    area.y0(y(1));
 			   
-		           console.log(d3.extent(data1, function(d) { return d.date;}));
+		           console.log(d3.extent(data, function(d) { return d.date;}));
 		    
 	            }
 
