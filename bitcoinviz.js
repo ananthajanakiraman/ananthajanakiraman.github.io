@@ -138,7 +138,7 @@
 		.style("shape-rendering", "crispEdges")
 		.style("stroke-dasharray", "1,1")
 		.style("opacity", 0.8)
-		.attr("x1",width)
+		.attr("x1",-width)
 		.attr("x2",0);
 
 	   focus.append("text").attr("class", "y1--text")
