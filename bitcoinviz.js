@@ -283,10 +283,6 @@
                             .duration(300)
                             .ease("exp")
                             .attr("width", 0).remove();
-			       
-			       
-			   svg.selectAll("path").attr("class","line").attr("d1",line).ease("exp").
-			   transition().duration(1000).delay(500);
 			   
 		           console.log(d3.extent(data1, function(d) { return d.date1;}));
 		       });
