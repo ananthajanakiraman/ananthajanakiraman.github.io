@@ -233,7 +233,7 @@
                                   .attr("cy", y(maximumObj.price))
                                   .attr("r", 10)
                                   .attr("fill", "none")
-                                  .attr("stroke", "red")
+                                  .attr("stroke", "Lime")
                                   .attr("stroke-width", "2px");
                 repeat();
 	       
@@ -243,7 +243,7 @@
                                   .attr("cy", y(minimumObj.price))
                                   .attr("r", 10)
                                   .attr("fill", "none")
-                                  .attr("stroke", "darkOrange")
+                                  .attr("stroke", "red")
                                   .attr("stroke-width", "2px");
 	       
 
