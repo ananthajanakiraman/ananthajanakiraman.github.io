@@ -107,12 +107,12 @@
              .style("text-anchor", "end")
              .text("Closing Price (USD)");
 
-	  var pla = svg.append("path")
+	  var pll = svg.append("path")
 	      .data([data])
 	      .attr("class", "line")
               .attr("d", line);
 	
-	  pla.append("path")
+	  var pla = svg.append("path")
 	      .datum(data)
 	      .attr("fill","lightsteelblue")
               .attr("d", area);
