@@ -107,12 +107,12 @@
              .style("text-anchor", "end")
              .text("Closing Price ($)");
 
-	  var pll = svg.append("path")
+	  svg.append("path")
 	      .data([data])
 	      .attr("class", "line")
               .attr("d", line);
 	
-	  var pla = svg.append("path")
+	  svg.append("path")
 	      .datum(data)
 	      .attr("fill","lightsteelblue")
               .attr("d", area);
@@ -190,7 +190,7 @@
 	              .text("$" + d.price);
                  focus.select(".circle").attr("transform", "translate(" + x(d.date) + "," + y(d.price) + ")");
 	         focus.select(".x--line").attr("transform", "translate(" + x(d.date) + "," + height + ")");
-	         focus.select(".y--line").attr("transform", "translate(" + y(d.price) + "," + width + ")");
+	         focus.select(".y--line").attr("transform", "translate(" + width + "," + y(d.price) + ")");
 				      }
 	       
         svg.selectAll(".dot")
@@ -217,7 +217,7 @@
 	              .text("$" + d.price);
                  focus.select(".circle").attr("transform", "translate(" + x(d.date) + "," + y(d.price) + ")");
 	         focus.select(".x--line").attr("transform", "translate(" + x(d.date) + "," + height + ")");
-	         focus.select(".y--line").attr("transform", "translate(" + y(d.price) + "," + width + ")");		
+	         focus.select(".y--line").attr("transform", "translate(" + width + "," + y(d.price) + ")");		
 	
 	      });
 	       
