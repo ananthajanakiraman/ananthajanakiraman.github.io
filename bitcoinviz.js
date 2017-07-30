@@ -117,8 +117,6 @@
 	      .attr("fill","lightsteelblue")
               .attr("d", area);
 	       
-	   pla.attr("fill","darkOrange");
-	       
 	   var focus = svg.append("g")
 	        .attr("opacity",0)
 		.attr("class", "focus");
@@ -245,15 +243,6 @@
 	        .style("font-weight", "bold")
 	        .style("font-family","Arial")
 	       
-	       
-	       d3.selectAll('input[name="BTHY"]').on("change", change);
-	
-	       function change(pla) {
-		       
-                           pla.transition().attr("fill","darkOrange").delay(500).duration(25000);
-		           console.log(d3.extent(data, function(d) { return d.date;}));
-		    
-	            }
 
        }); 
       })(d3);
