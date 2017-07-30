@@ -107,7 +107,7 @@
              .style("text-anchor", "end")
              .text("Closing Price (USD)");
 
-	  svg.append("path")
+	  var pll = svg.append("path")
 	      .data([data])
 	      .attr("class", "line")
               .attr("d", line);
@@ -269,7 +269,7 @@
           ]);
 	area.y0(y(0));
 		       
-		       pla.transition().attr("fill","orange").duration(2500).delay(500);
+		       pll.transition().duration(2500).delay(500);
 		       });
 	       }
 
