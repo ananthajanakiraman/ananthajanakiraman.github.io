@@ -101,7 +101,7 @@
           
 	 svg.append("g")
 	     .append("text")
-             .attr("transform", "rotate(180)")
+             .attr("transform", "rotate(-180)")
              .attr("y", 6)
              .attr("dy", ".75em")
              .style("text-anchor", "end")
