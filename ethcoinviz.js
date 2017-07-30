@@ -225,16 +225,30 @@
                var maximum1 = d3.max(data, function(d) {return d.price;});
  	       var maximumObj = data.filter(function(d) {return d.price == maximum1;})[0];
 	       
+               var minimum1 = d3.min(data, function(d) {return d.price;});
+ 	       var minimumObj = data.filter(function(d) {return d.price == minimum1;})[0];  	       
+	       
 	       var maxCircle = svg.append("circle")
                                   .attr("class", "maxCircle")
   	                          .attr("cx", x(maximumObj.date))
                                   .attr("cy", y(maximumObj.price))
                                   .attr("r", 10)
                                   .attr("fill", "none")
+                                  .attr("stroke", "Lime")
+                                  .attr("stroke-width", "2px");
+                repeat();
+	       
+                var minCircle = svg.append("circle")
+	                          .attr("class", "minCircle")
+  	                          .attr("cx", x(minimumObj.date))
+                                  .attr("cy", y(minimumObj.price))
+                                  .attr("r", 10)
+                                  .attr("fill", "none")
                                   .attr("stroke", "red")
                                   .attr("stroke-width", "2px");
 	       
-                repeat();
+
+	        repeat1();
 	       
 		function repeat() {
 			 maxCircle.transition()
@@ -246,13 +260,32 @@
 				  .on("end", repeat);
 			};
 	       
+	        function repeat1() {
+			          minCircle.transition()
+				  .duration(2000)
+			          .attr("r", 2)
+				  .transition()
+				  .duration(1000)
+				  .attr("r", 16)
+				  .on("end", repeat1);
+		        };
+	       
 	       	svg.append("text")
 		.attr("x",width/2-100)
 		.attr("y",y(maximum1))
-		.text('Peak: ' + '$' + maximum1)
-	        .style("font-size","14px")
-	        .style("font-weight", "bold")
-	        .style("font-family","Arial")
+		.text('--Peak: ' + '$' + maximum1)
+	        .style("font-size","10px")
+	        .style("font-weight", "regular")
+	        .style("font-family","sans-serif")
+	       
+	       
+	       	svg.append("text")
+		.attr("x",width/2+10)
+		.attr("y",y(maximum1))
+		.text('--Lowest: ' + '$' + minimum1)
+	        .style("font-size","10px")
+	        .style("font-weight", "regular")
+	        .style("font-family","sans-serif")
 
        }); 
     })(d3);
