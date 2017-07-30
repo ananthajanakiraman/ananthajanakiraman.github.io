@@ -248,7 +248,7 @@
 	
 	       function change() {
 		       
-                           pla.transition().attr("fill","darkOrange").delay(500).duration(2500);
+                           pla.transition().attr("fill","darkOrange").delay(500).duration(25000);
 		           console.log(d3.extent(data, function(d) { return d.date;}));
 		    
 	            }
