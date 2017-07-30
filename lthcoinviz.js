@@ -21,7 +21,7 @@
        var parseDate1 = d3.timeFormat("%Y-%m-%d").parse;
        var parseDate  = d3.timeParse("%Y-%m-%d"),
 	   bisectDate = d3.bisector(function(d) { return d.date; }).left;
-       var formatTime = d3.timeFormat("%e %B");
+       var formatTime = d3.timeFormat("%e %B %Y");
 
        var div = d3.select("body").append("div")
                    .attr("class", "tooltip")
