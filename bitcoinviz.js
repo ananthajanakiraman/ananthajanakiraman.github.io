@@ -284,6 +284,8 @@
 	        .style("font-size","14px")
 	        .style("font-weight", "bold")
 	        .style("font-family","sans-serif")
+	        .style("stroke","white")
+	        .style("stroke-width","2px")
 	       
 
        }); 
