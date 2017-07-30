@@ -105,7 +105,7 @@
              .attr("y", 10)
              .attr("dx", "10em")
              .style("text-anchor", "end")
-             .text("Closing Price (USD)");
+             .text("Closing Price ($)");
 
 	  var pll = svg.append("path")
 	      .data([data])
