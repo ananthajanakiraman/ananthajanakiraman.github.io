@@ -246,6 +246,28 @@
 	       d3.selectAll('input[name="BTHY"]').on("change", change);
 	       
 	       function change() {
+		       var val1 = d3.select('input[name="BTHY"]:checked').node().value;
+		       d3.tsv("databit"+val1+".tsv", function(error, data) {
+             if (error) throw error; 
+            
+             data.forEach(function(d) {
+                  d.date = parseDate(d.Date);
+		  d.price = +d.BITCOIN;
+           });
+
+         data.sort(function(a, b) {
+              return a.date - b.date;
+           });
+
+       x.domain(d3.extent(data, function(d) {
+             return d.date;
+           }));
+	       
+        y.domain([
+                0,
+		d3.max(data, function(d) {return d.price;})
+          ]);
+	area.y0(y(0));
 		       pla.transition().attr("fill","orange").duration(2500).delay(500);
 	       }
 
