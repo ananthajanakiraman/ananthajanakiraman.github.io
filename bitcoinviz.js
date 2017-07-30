@@ -269,7 +269,11 @@
           ]);
 	area.y0(y(0));
 		       
-		       pll.transition().duration(2500).delay(500);
+		    var t1 = svg.transition().duration(2500).delay(500);
+			t1.selectAll(".line15").attr("d", line);
+	                t1.selectAll(".area").attr("d", area);
+			t1.attr("class", "x axis").attr("transform", "translate(0," + height + ")").call(xAxis);
+			t1.attr("transform", "translate(0,0)").attr("class", "y axis").call(yAxis);
 		       });
 	       }
 
