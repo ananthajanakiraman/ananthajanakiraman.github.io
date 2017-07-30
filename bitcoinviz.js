@@ -89,6 +89,15 @@
           ]);
 	area.y0(y(0));
         
+        var defs = svg.append("defs");
+	
+	defs.append("clipPath")
+		.attr("id", "clipp")
+		.append("rect")
+		.attr("y", y(1))
+		.attr("width", width)
+		.attr("height", height - y(1));
+	       
 	svg.append("g")
              .attr("class", "x axis")
              .attr("transform", "translate(0," + height + ")")
@@ -115,6 +124,7 @@
 	  svg.append("path")
 	      .datum(data)
 	      .attr("fill","lightsteelblue")
+	      .attr("clip-path", "url(#clipp)")
               .attr("d", area);
 	       
 	   var focus = svg.append("g")
@@ -278,11 +288,10 @@
                              return y(d1.price1);
                            });
 			   
-			   svg.selectAll("line")
-                            .transition()
-                            .duration(300)
-                            .ease("exp")
-                            .attr("width", 0).remove();
+                           svg.select('#clipp>rect').transition().duration(600)
+			       .attr("y", y(1))
+		               .attr("height", height - y(1));
+	                    area.y0(y(1));
 			   
 		           console.log(d3.extent(data1, function(d) { return d.date1;}));
 		       });
