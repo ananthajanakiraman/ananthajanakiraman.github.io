@@ -283,7 +283,6 @@
 		.text('Lowest: ' + '$' + minimum1)
 		.style("stroke", "white")
 		.style("stroke-width", "3px")
-		.style("opacity", 0.8)
 	        .style("font-size","13px")
 	        .style("font-family","sans-serif")
 	       
@@ -292,9 +291,8 @@
 		.attr("y",y(0))
 		.text('Lowest: ' + '$' + minimum1)
 		.style("stroke", "black")
-		.style("stroke-width", "2px")
-		.style("opacity", 0.8)
-	        .style("font-size","12px")
+		.style("stroke-width", "3px")
+	        .style("font-size","13px")
 	        .style("font-family","sans-serif")
 
        }); 
