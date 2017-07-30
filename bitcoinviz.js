@@ -261,9 +261,9 @@
 	                             1.05*d3.max(data, function(d) { return d.price; })]);
 		       
                            svg.select("#clipp>rect").transition().duration(600)
-			       .attr("y", y(1))
-		               .attr("height", height - y(1));
-	                    area.y0(y(1));
+			       .attr("y", y(0))
+		               .attr("height", height - y(0));
+	                    area.y0(y(0));
 		       
 		           var t1 = svg.transition().duration(600);
 		           t1.selectAll(".line15").attr("d", line);
