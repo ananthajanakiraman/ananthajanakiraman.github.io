@@ -88,15 +88,6 @@
 		d3.max(data, function(d) {return d.price;})
           ]);
 	area.y0(y(0));
-        
-        var defs = svg.append("defs");
-	
-	defs.append("clipPath")
-		.attr("id", "clipp")
-		.append("rect")
-		.attr("y", y(0))
-		.attr("width", width)
-		.attr("height", height - y(0));
 	       
 	svg.append("g")
              .attr("class", "x axis")
@@ -124,7 +115,6 @@
 	  svg.append("path")
 	      .datum(data)
 	      .attr("fill","lightsteelblue")
-	      .attr("clip-path", "url(#clipp)")
               .attr("d", area);
 	       
 	   var focus = svg.append("g")
@@ -257,11 +247,6 @@
 	       d3.selectAll('input[name="BTHY"]').on("change", change);
 	
 	       function change() {
-			   y.domain([0.99*d3.min(data, function(d) { return d.price; }),
-	                             1.05*d3.max(data, function(d) { return d.price; })]);
-		       
-                           svg.select("#clipp>rect").transition().duration(600);
-
 		       
 		           var t1 = svg.transition().duration(600);
 		           t1.selectAll(".line15").attr("d", line);
