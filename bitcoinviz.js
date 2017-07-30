@@ -103,7 +103,7 @@
 	     .append("text")
 	     .attr("transform", "rotate(0)")
              .attr("y", 10)
-             .attr("dx", "16em")
+             .attr("dx", "10em")
              .style("text-anchor", "end")
              .text("Closing Price (USD)");
 
