@@ -286,10 +286,6 @@
 	        .style("font-size","13px")
 	        .style("font-weight", "regular")
 	        .style("font-family","sans-serif")
-	        .style("padding","2px")
-	        .style("border-radius","8px")
-	        .style("border","0px")
-	        .style("background","lightsteelblue")
 	       
 
        }); 
