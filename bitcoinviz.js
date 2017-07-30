@@ -278,7 +278,7 @@
                              return y(d1.price1);
                            });
 			   
-			   svg.transition().duration(1000).select("path").attr("class","line").attr("d1",line);
+			   svg.transition().duration(1000).delay(500).select("path").attr("class","line").attr("d1",line);
 			   
 		           console.log(d3.extent(data1, function(d) { return d.date1;}));
 		       });
