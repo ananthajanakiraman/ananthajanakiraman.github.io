@@ -190,6 +190,7 @@
 	              .text("$" + d.price);
                  focus.select(".circle").attr("transform", "translate(" + x(d.date) + "," + y(d.price) + ")");
 	         focus.select(".x--line").attr("transform", "translate(" + x(d.date) + "," + height + ")");
+	         focus.select(".y--line").attr("transform", "translate(" + y(d.price) + "," + width + ")");
 				      }
 	       
         svg.selectAll(".dot")
@@ -216,6 +217,7 @@
 	              .text("$" + d.price);
                  focus.select(".circle").attr("transform", "translate(" + x(d.date) + "," + y(d.price) + ")");
 	         focus.select(".x--line").attr("transform", "translate(" + x(d.date) + "," + height + ")");
+	         focus.select(".y--line").attr("transform", "translate(" + y(d.price) + "," + width + ")");		
 	
 	      });
 	       
