@@ -226,7 +226,7 @@
 	       
                var minimum1 = d3.min(data, function(d) {return d.price;});
  	       var minimumObj = data.filter(function(d) {return d.price == minimum1;})[0];  	       
-	       
+	       console.log(minimumObj);
 	       var maxCircle = svg.append("circle")
                                   .attr("class", "maxCircle")
   	                          .attr("cx", x(maximumObj.date))
@@ -238,8 +238,7 @@
                 repeat();
 	       
                 var minCircle = svg.append("circle")
-		                  .data(minimumObj)
-                                  .attr("class", "minCircle")
+	                          .attr("class", "minCircle")
   	                          .attr("cx", x(minimumObj.date))
                                   .attr("cy", y(minimumObj.price))
                                   .attr("r", 10)
