@@ -248,7 +248,7 @@
 	       
 	       d3.selectAll('input[name="BTHY"]').on("change", change);
 	
-	       function change() {
+	       function change(pla) {
 		       
                            pla.transition().attr("fill","darkOrange").delay(500).duration(25000);
 		           console.log(d3.extent(data, function(d) { return d.date;}));
