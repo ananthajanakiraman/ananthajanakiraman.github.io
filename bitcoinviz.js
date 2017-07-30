@@ -256,7 +256,7 @@
 	       
 	       d3.selectAll('input[name="BTHY"]').on("change", change);
 	
-	       function change(svg) {
+	       function change() {
 		       var val1 = d3.select('input[name="BTHY"]:checked').node().value;
 		       var parseDate2  = d3.timeParse("%Y-%m-%d")
 		       d3.tsv("databit"+val1+".tsv", function(error, data1) {
