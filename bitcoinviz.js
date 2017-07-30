@@ -248,9 +248,7 @@
 	
 	       function change() {
 		       
-		           var t1 = svg.transition().duration(600);
-		           t1.selectAll(".line15").attr("d", line);
-		           t1.selectAll(".y15.axis15").call(yAxis);
+                           pla.transition().attr("fill","darkOrange").delay(500).duration(2500);
 		           console.log(d3.extent(data, function(d) { return d.date;}));
 		    
 	            }
