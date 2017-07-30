@@ -41,7 +41,7 @@
        var yAxis = d3.axisLeft(y);
        
        var line = d3.line()
-                    .curve(d3.curveBasis)
+                    .curve(d3.curveCardinal)
                     .x(function(d) {
                        return x(d.date);
                      })
@@ -50,6 +50,7 @@
                      });
 
         var area = d3.area()
+	            .curve(d3.curveCardinal)
                     .x(function(d) {
                        return x(d.date);
                      })
@@ -101,11 +102,11 @@
           
 	 svg.append("g")
 	     .append("text")
-             .attr("transform", "rotate(-90)")
+             .attr("transform", "rotate(0)")
              .attr("y", 10)
-             .attr("dy", ".75em")
+             .attr("dx", "10em")
              .style("text-anchor", "end")
-             .text("Closing Price (USD)");
+             .text("Closing Price ($)");
 
 	  svg.append("path")
 	      .data([data])
