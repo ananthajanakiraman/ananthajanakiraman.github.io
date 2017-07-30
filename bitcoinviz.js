@@ -278,7 +278,7 @@
                              return y(d1.price1);
                            });
 			   
-			   svg.selectAll(".line")
+			   svg.selectAll("path")
                             .transition()
                             .duration(300)
                             .ease("exp")
