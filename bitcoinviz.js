@@ -260,10 +260,8 @@
 			   y.domain([0.99*d3.min(data, function(d) { return d.price; }),
 	                             1.05*d3.max(data, function(d) { return d.price; })]);
 		       
-                           svg.select("#clipp>rect").transition().duration(600)
-			       .attr("y", y(0))
-		               .attr("height", height - y(0));
-	                    area.y0(y(0));
+                           svg.select("#clipp>rect").transition().duration(600);
+
 		       
 		           var t1 = svg.transition().duration(600);
 		           t1.selectAll(".line15").attr("d", line);
