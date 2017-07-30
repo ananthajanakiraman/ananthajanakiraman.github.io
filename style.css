@@ -2,6 +2,11 @@ body {
   font: 10px sans-serif;
 }
 
+img.center {
+    display: block;
+    margin: 0 auto;
+}
+
 .axis15 path,
 .axis15 line {
   fill: none;
