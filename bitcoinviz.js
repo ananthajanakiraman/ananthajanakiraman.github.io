@@ -262,7 +262,9 @@
 			       .attr("y", y(1))
 		               .attr("height", height - y(1));
 	                    area.y0(y(1));
-			   
+		       
+		           var t1 = svg.transition().duration(600);
+
 		           console.log(d3.extent(data, function(d) { return d.date;}));
 		    
 	            }
