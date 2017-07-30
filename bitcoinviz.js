@@ -275,7 +275,15 @@
 		.text('Peak: ' + '$' + maximum1)
 	        .style("font-size","14px")
 	        .style("font-weight", "bold")
-	        .style("font-family","Arial")
+	        .style("font-family","sans-serif")
+	       
+	       	svg.append("text")
+		.attr("x",width/2-100)
+		.attr("y",y(0))
+		.text('Lowest: ' + '$' + minimum1)
+	        .style("font-size","14px")
+	        .style("font-weight", "bold")
+	        .style("font-family","sans-serif")
 	       
 
        }); 
