@@ -117,7 +117,7 @@
 	      .attr("fill","lightsteelblue")
               .attr("d", area);
 	       
-	   pla.attr("fill","darkOrange:);
+	   pla.attr("fill","darkOrange");
 	       
 	   var focus = svg.append("g")
 	        .attr("opacity",0)
