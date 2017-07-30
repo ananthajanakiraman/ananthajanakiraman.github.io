@@ -110,7 +110,7 @@
           
 	 svg.append("g")
 	     .append("text")
-             .attr("transform", "rotate(-90)")
+             .attr("transform", "rotate(0)")
              .attr("y", 10)
              .attr("dy", ".75em")
              .style("text-anchor", "end")
@@ -257,38 +257,8 @@
 	       d3.selectAll('input[name="BTHY"]').on("change", change);
 	
 	       function change() {
-		       var val1 = d3.select('input[name="BTHY"]:checked').node().value;
-		       var parseDate2  = d3.timeParse("%Y-%m-%d")
-		       d3.tsv("databit"+val1+".tsv", function(error, data1) {
-                             if (error) throw error; 
-            
-                            data1.forEach(function(d1) {
-                            d1.date1 = parseDate2(d1.Date);
-		            d1.price1 = +d1.BITCOIN;
-                            });
-
-                            data1.sort(function(a1, b1) {
-                            return a1.date1 - b1.date1;
-                            });     
-			       
-			    var line = d3.line()
-                           .curve(d3.curveCardinal)
-                           .x(function(d1) {
-                              return x(d1.date1);
-                            })
-                           .y(function(d1) {
-                              return y(d1.price1);
-                           });
-
-                           var area = d3.area()
-                          .x(function(d1) {
-                              return x(d1.date1);
-                           })
-                          .y1(function(d1) {
-                             return y(d1.price1);
-                           });
 			   
-                           svg.select('#clipp>rect').transition().duration(600)
+                           svg.select("#clipp>rect").transition().duration(600)
 			       .attr("y", y(1))
 		               .attr("height", height - y(1));
 	                    area.y0(y(1));
