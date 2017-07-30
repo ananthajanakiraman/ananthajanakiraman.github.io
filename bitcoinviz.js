@@ -40,7 +40,7 @@
        var yAxis = d3.axisLeft(y);
        
        var line = d3.line()
-                    .curve(d3.curveBasis)
+                    .curve(d3.curveCardinal)
                     .x(function(d) {
                        return x(d.date);
                      })
@@ -49,6 +49,7 @@
                      });
 
         var area = d3.area()
+	             .curve(d3.curveCardinal)
                     .x(function(d) {
                        return x(d.date);
                      })
@@ -261,7 +262,7 @@
                             });     
 			       
 			    var line = d3.line()
-                           .curve(d3.curveBasis)
+                           .curve(d3.curveCardinal)
                            .x(function(d1) {
                               return x(d1.date1);
                             })
