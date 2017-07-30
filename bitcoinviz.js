@@ -94,9 +94,9 @@
 	defs.append("clipPath")
 		.attr("id", "clipp")
 		.append("rect")
-		.attr("y", y(1))
+		.attr("y", y(0))
 		.attr("width", width)
-		.attr("height", height - y(1));
+		.attr("height", height - y(0));
 	       
 	svg.append("g")
              .attr("class", "x axis")
