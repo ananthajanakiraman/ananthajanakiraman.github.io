@@ -243,57 +243,6 @@
 	        .style("font-weight", "bold")
 	        .style("font-family","Arial")
 	       
-	       d3.selectAll('input[name="BTHY"]').on("change", change);
-	       
-	       function change() {
-		       var val1 = d3.select('input[name="BTHY"]:checked').node().value;
-		       
-		           var line = d3.line()
-                           .curve(d3.curveCardinal)
-                           .x(function(d) {
-                              return x(d.date);
-                            })
-                           .y(function(d) {
-                              return y(d.price);
-                           });
-
-                           var area = d3.area()
-                          .x(function(d) {
-                              return x(d.date);
-                           })
-                          .y1(function(d) {
-                             return y(d.price);
-                           });
-		       
-		       d3.tsv("databit"+val1+".tsv", function(error, data) {
-                       if (error) throw error; 
-            
-                       data.forEach(function(d) {
-                       d.date = parseDate(d.Date);
-		       d.price = +d.BITCOIN;
-                       });
-
-         data.sort(function(a, b) {
-              return a.date - b.date;
-           });
-
-       x.domain(d3.extent(data, function(d) {
-             return d.date;
-           }));
-	       
-        y.domain([
-                0,
-		d3.max(data, function(d) {return d.price;})
-          ]);
-	area.y0(y(0));
-		       
-		    var t1 = svg.transition().duration(2500).delay(500);
-			t1.selectAll(".line15").attr("d", line);
-	                t1.selectAll(".area").attr("d", area);
-			t1.attr("class", "x axis").attr("transform", "translate(0," + height + ")").call(xAxis);
-			t1.attr("transform", "translate(0,0)").attr("class", "y axis").call(yAxis);
-		       });
-	       }
 
        }); 
       })(d3);
