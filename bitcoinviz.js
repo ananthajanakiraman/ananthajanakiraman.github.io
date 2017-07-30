@@ -257,7 +257,9 @@
 	       d3.selectAll('input[name="BTHY"]').on("change", change);
 	
 	       function change() {
-			   
+			   y.domain([0.99*d3.min(data, function(d) { return d[city]; }),
+	                             1.05*d3.max(data, function(d) { return d[city]; })]);
+		       
                            svg.select("#clipp>rect").transition().duration(600)
 			       .attr("y", y(1))
 		               .attr("height", height - y(1));
