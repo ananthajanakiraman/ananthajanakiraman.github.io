@@ -278,6 +278,13 @@
                              return y(d1.price1);
                            });
 			   
+			   svg.selectAll(".line")
+                            .transition()
+                            .duration(300)
+                            .ease("exp")
+                            .attr("width", 0).remove();
+			       
+			       
 			   svg.selectAll("path").attr("class","line").attr("d1",line).ease("exp").
 			   transition().duration(1000).delay(500);
 			   
