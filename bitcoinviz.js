@@ -224,6 +224,9 @@
                var maximum1 = d3.max(data, function(d) {return d.price;});
  	       var maximumObj = data.filter(function(d) {return d.price == maximum1;})[0];
 	       
+               var minimum1 = d3.min(data, function(d) {return d.price;});
+ 	       var minimumObj = data.filter(function(d) {return d.price == minimum1;})[0];  	       
+	       
 	       var maxCircle = svg.append("circle")
                                   .attr("class", "maxCircle")
   	                          .attr("cx", x(maximumObj.date))
@@ -232,11 +235,30 @@
                                   .attr("fill", "none")
                                   .attr("stroke", "red")
                                   .attr("stroke-width", "2px");
+
+                var minCircle = svg.append("circle")
+                                  .attr("class", "minCircle")
+  	                          .attr("cx", x(minimumObj.date))
+                                  .attr("cy", y(minimumObj.price))
+                                  .attr("r", 10)
+                                  .attr("fill", "none")
+                                  .attr("stroke", function (d) { if (d.price <= 0) {return "none"}
+								 else {return "darkOrange"};
+							       })
+                                  .attr("stroke-width", "2px");
 	       
                 repeat();
 	       
 		function repeat() {
 			 maxCircle.transition()
+				  .duration(2000)
+			          .attr("r", 2)
+				  .transition()
+				  .duration(1000)
+				  .attr("r", 16)
+				  .on("end", repeat);
+			
+	                 minCircle.transition()
 				  .duration(2000)
 			          .attr("r", 2)
 				  .transition()
