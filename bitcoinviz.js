@@ -102,7 +102,7 @@
 	 svg.append("g")
 	     .append("text")
 	     .attr("transform", "rotate(0)")
-             .attr("y", 10)
+             .attr("y", 6)
              .attr("dx", "10em")
              .style("text-anchor", "end")
              .text("Closing Price ($)");
