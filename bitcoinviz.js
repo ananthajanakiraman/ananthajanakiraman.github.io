@@ -235,7 +235,8 @@
                                   .attr("fill", "none")
                                   .attr("stroke", "red")
                                   .attr("stroke-width", "2px");
-
+                repeat();
+	       
                 var minCircle = svg.append("circle")
                                   .attr("class", "minCircle")
   	                          .attr("cx", x(minimumObj.date))
@@ -247,7 +248,8 @@
 							       })
                                   .attr("stroke-width", "2px");
 	       
-                repeat();
+
+	        repeat1();
 	       
 		function repeat() {
 			 maxCircle.transition()
@@ -257,15 +259,17 @@
 				  .duration(1000)
 				  .attr("r", 16)
 				  .on("end", repeat);
-			
-	                 minCircle.transition()
+			};
+	       
+	        function repeat1() {
+			          minCircle.transition()
 				  .duration(2000)
 			          .attr("r", 2)
 				  .transition()
 				  .duration(1000)
 				  .attr("r", 16)
-				  .on("end", repeat);
-			};
+				  .on("end", repeat1);
+		        };
 	       
 	       	svg.append("text")
 		.attr("x",width/2-100)
