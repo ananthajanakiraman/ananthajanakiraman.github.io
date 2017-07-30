@@ -247,13 +247,31 @@
 	       
 	       function change() {
 		       var val1 = d3.select('input[name="BTHY"]:checked').node().value;
+		       
+		           var line = d3.line()
+                           .curve(d3.curveCardinal)
+                           .x(function(d) {
+                              return x(d.date);
+                            })
+                           .y(function(d) {
+                              return y(d.price);
+                           });
+
+                           var area = d3.area()
+                          .x(function(d) {
+                              return x(d.date);
+                           })
+                          .y1(function(d) {
+                             return y(d.price);
+                           });
+		       
 		       d3.tsv("databit"+val1+".tsv", function(error, data) {
-             if (error) throw error; 
+                       if (error) throw error; 
             
-             data.forEach(function(d) {
-                  d.date = parseDate(d.Date);
-		  d.price = +d.BITCOIN;
-           });
+                       data.forEach(function(d) {
+                       d.date = parseDate(d.Date);
+		       d.price = +d.BITCOIN;
+                       });
 
          data.sort(function(a, b) {
               return a.date - b.date;
