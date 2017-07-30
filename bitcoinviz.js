@@ -226,7 +226,7 @@
 	       
                var minimum1 = d3.min(data, function(d) {return d.price;});
  	       var minimumObj = data.filter(function(d) {return d.price == minimum1;})[0];  	       
-	       console.log(minimumObj);
+	       
 	       var maxCircle = svg.append("circle")
                                   .attr("class", "maxCircle")
   	                          .attr("cx", x(maximumObj.date))
@@ -273,7 +273,7 @@
 		.attr("x",width/2-100)
 		.attr("y",y(maximum1))
 		.text('Peak: ' + '$' + maximum1)
-	        .style("font-size","12px")
+	        .style("font-size","13px")
 	        .style("font-weight", "regular")
 	        .style("font-family","sans-serif")
 	       
@@ -281,10 +281,13 @@
 		.attr("x",width/2-100)
 		.attr("y",y(0))
 		.text('Lowest: ' + '$' + minimum1)
-	        .style("font-size","12px")
+	        .style("font-size","13px")
 	        .style("font-weight", "regular")
 	        .style("font-family","sans-serif")
 	        .style("padding","2px")
+	        .style("border-radius","8px")
+	        .style("border","0px")
+	        .style("background","lightsteelblue")
 	       
 
        }); 
