@@ -243,6 +243,11 @@
 	        .style("font-weight", "bold")
 	        .style("font-family","Arial")
 	       
+	       d3.selectAll('input[name="BTHY"]').on("change", change);
+	       
+	       function change() {
+		       svg.transition().duration(2500).delay(500);
+	       }
 
        }); 
       })(d3);
