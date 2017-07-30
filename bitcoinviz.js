@@ -278,22 +278,13 @@
 	        .style("font-family","sans-serif")
 	       
 	       	svg.append("text")
-		.attr("x",width/2-100)
-		.attr("y",y(0))
-		.text('Lowest: ' + '$' + minimum1)
-		.style("stroke", "white")
-		.style("stroke-width", "3px")
+		.attr("x",(width/2-100)+ maximum1.length + 6)
+		.attr("y",y(maximum1))
+		.text('  |  Lowest: ' + '$' + minimum1)
 	        .style("font-size","13px")
+	        .style("font-weight", "regular")
 	        .style("font-family","sans-serif")
 	       
-	       	 svg.append("text")
-		.attr("x",width/2-100)
-		.attr("y",y(0))
-		.text('Lowest: ' + '$' + minimum1)
-		.style("stroke", "black")
-		.style("stroke-width", "3px")
-	        .style("font-size","13px")
-	        .style("font-family","sans-serif")
 
        }); 
       })(d3);
