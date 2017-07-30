@@ -107,7 +107,7 @@
              .style("text-anchor", "end")
              .text("Closing Price (USD)");
 
-	  var pll = svg.append("path")
+	  svg.append("path")
 	      .data([data])
 	      .attr("class", "line")
               .attr("d", line);
@@ -246,7 +246,7 @@
 	       d3.selectAll('input[name="BTHY"]').on("change", change);
 	       
 	       function change() {
-		       svg.transition().duration(2500).delay(500);
+		       pla.transition().attr("fill","orange").duration(2500).delay(500);
 	       }
 
        }); 
