@@ -1,4 +1,6 @@
-# ananthajanakiraman.github.io
+# Link to visualization: https://ananthajanakiraman.github.io
+
+# This visualization was created using D3.js
 
 # About the Visualization
 
